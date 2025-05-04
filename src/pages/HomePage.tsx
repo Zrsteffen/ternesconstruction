@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-screen">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
           <img 
