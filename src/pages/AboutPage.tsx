@@ -2,10 +2,13 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Award, Users, Heart } from 'lucide-react';
+
 import SectionTitle from '../components/ui/SectionTitle';
 import ContactCta from '../components/home/ContactCta';
+
 import jamie from '../images/jamie.JPG';
 import jordan from '../images/jordan.JPG';
+import aboutUs from '../images/about-us.JPG';
 
 const AboutPage: React.FC = () => {
   const values = [
@@ -37,6 +40,37 @@ const AboutPage: React.FC = () => {
         <title>About Us | Ternes Construction | Custom Home Builders</title>
         <meta name="description" content="Meet Jamie and Jordan Ternes — the builder-direct team behind Wichita’s trusted custom home construction company. Learn how their hands-on approach ensures your dream home becomes a reality." />
       </Helmet>
+
+      {/* Hero Image Section */}
+      <section className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-screen">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={aboutUs}
+            alt="Ternes Construction About Us Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+        </div>
+
+        <div className="relative z-20 container mx-auto px-4 md:px-8 h-full flex flex-col justify-center pt-32">
+          <motion.h1
+            className="text-white text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Meet Your Builder-Direct Team
+          </motion.h1>
+          <motion.p
+            className="text-white text-xl mt-6 max-w-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            A family-run operation driven by transparency, craftsmanship, and a commitment to treating every build like it’s our own.
+          </motion.p>
+        </div>
+      </section>
 
       <section className="py-20 bg-neutral-50">
         <div className="container mx-auto px-4 md:px-8 text-center">
