@@ -21,14 +21,15 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-md py-3' 
-          : 'bg-transparent py-5'
+          : 'bg-transparent py-6 md:py-8'
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="z-10">
-            <Logo />
+          <Link to="/" className="z-20 flex-shrink-0">
+            <Logo size={100} />
           </Link>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
