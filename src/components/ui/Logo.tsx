@@ -1,19 +1,14 @@
 import React from 'react';
+import logo from '../../images/logo.png'; // adjust path if you're in a deeper folder
 
-interface LogoProps {
-  isFooter?: boolean;
-}
-
-const Logo: React.FC<LogoProps> = ({ isFooter = false }) => {
+const Logo: React.FC = () => {
   return (
-    <div className="flex items-center">
-      <img
-        src="/images/logo.png"
-        alt="Ternes Construction"
-        className={`h-20 w-auto ${isFooter ? 'invert' : ''}`} // h-20 instead of h-10
-        loading="lazy"
-      />
-    </div>
+    <img
+      src={logo}
+      alt="Ternes Construction"
+      className="h-20 w-auto"
+      loading="lazy"
+    />
   );
 };
 
