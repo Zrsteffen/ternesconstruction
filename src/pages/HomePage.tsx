@@ -11,8 +11,8 @@ import ServicesOverview from '../components/home/ServicesOverview';
 import Testimonials from '../components/home/Testimonials';
 import ContactCta from '../components/home/ContactCta';
 
-import heroHouse from '../images/hero-house.JPG';
-import aboutUs from '../images/about-us.JPG';
+import heroHouse from '../images/hero-house.jpg';
+import aboutUs from '../images/about-us.jpg';
 
 const HomePage: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
         <meta property="og:description" content="Family-owned custom home builder in Wichita, Kansas. Specializing in custom homes, barndominiums, and rural builds with transparency and craftsmanship." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ternesconstruction.com" />
-        <meta property="og:image" content="/images/hero-house.JPG" />
+        <meta property="og:image" content="/images/hero-house.jpg" />
       </Helmet>
 
       {/* Hero Section */}
