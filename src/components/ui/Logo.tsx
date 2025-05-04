@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/logo.png'; // relative import
+import logo from '../../images/logo.png'; // ✅ Adjust this if your directory structure is different
 
 interface LogoProps {
   isFooter?: boolean;
