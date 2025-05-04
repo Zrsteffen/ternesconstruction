@@ -1,5 +1,5 @@
+// src/components/ui/Logo.tsx
 import React from 'react';
-import logo from '../../images/logo.png'; // ✅ Adjust this if your directory structure is different
 
 interface LogoProps {
   isFooter?: boolean;
@@ -9,9 +9,9 @@ const Logo: React.FC<LogoProps> = ({ isFooter = false }) => {
   return (
     <div className="flex items-center">
       <img
-        src={logo}
+        src="/images/logo.png"
         alt="Ternes Construction"
-        className={`h-10 w-auto ${isFooter ? 'invert' : ''}`}
+        className={`h-20 w-auto ${isFooter ? 'invert' : ''}`} // h-20 instead of h-10
         loading="lazy"
       />
     </div>
