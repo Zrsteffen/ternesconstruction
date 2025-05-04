@@ -6,9 +6,9 @@ import { CheckCircle2, Award, Users, Heart } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ContactCta from '../components/home/ContactCta';
 
-import jamie from '../images/jamie.JPG';
-import jordan from '../images/jordan.JPG';
-import aboutUs from '../images/about-us.JPG';
+import jamie from '../images/jamie.jpg';
+import jordan from '../images/jordan.jpg';
+import aboutUs from '../images/about-us.jpg';
 
 const AboutPage: React.FC = () => {
   const values = [
