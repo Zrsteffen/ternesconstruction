@@ -1,5 +1,5 @@
 import React from 'react';
-import { Construction } from 'lucide-react';
+import logo from '../images/logo.png'; // adjust path if needed
 
 interface LogoProps {
   isFooter?: boolean;
@@ -7,11 +7,13 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ isFooter = false }) => {
   return (
-    <div className={`flex items-center ${isFooter ? 'text-white' : ''}`}>
-      <Construction size={32} className={isFooter ? 'text-white' : 'text-primary-600'} />
-      <span className={`ml-2 text-xl font-bold ${isFooter ? 'text-white' : 'text-neutral-900'}`}>
-        Ternes Construction
-      </span>
+    <div className="flex items-center">
+      <img
+        src={logo}
+        alt="Ternes Construction"
+        className={`h-10 w-auto ${isFooter ? 'invert' : ''}`}
+        loading="lazy"
+      />
     </div>
   );
 };
