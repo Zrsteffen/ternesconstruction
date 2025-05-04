@@ -3,12 +3,14 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+
 import SectionTitle from '../components/ui/SectionTitle';
 import CtaButton from '../components/ui/CtaButton';
 import FeaturedProjects from '../components/home/FeaturedProjects';
 import ServicesOverview from '../components/home/ServicesOverview';
 import Testimonials from '../components/home/Testimonials';
 import ContactCta from '../components/home/ContactCta';
+
 import heroHouse from '../images/hero-house.JPG';
 import aboutUs from '../images/about-us.JPG';
 
@@ -27,16 +29,18 @@ const HomePage: React.FC = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-screen">
+        {/* Background image + overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
           <img 
             src={heroHouse} 
             alt="Hero custom home exterior" 
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
         </div>
 
-        <div className="relative z-20 container mx-auto px-4 md:px-8 h-full flex flex-col justify-center">
+        {/* Foreground content */}
+        <div className="relative z-20 container mx-auto px-4 md:px-8 h-full flex flex-col justify-center pt-32">
           <motion.h1 
             className="text-white text-4xl md:text-5xl lg:text-6xl font-bold max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
@@ -47,7 +51,7 @@ const HomePage: React.FC = () => {
             Family Values.<br />
             Builder-Direct.
           </motion.h1>
-          
+
           <motion.p 
             className="text-white text-xl mt-6 max-w-2xl"
             initial={{ opacity: 0, y: 30 }}
@@ -56,7 +60,7 @@ const HomePage: React.FC = () => {
           >
             Over 15 years of hands-on craftsmanship building custom homes, barndominiums, and rural properties across Wichita and beyond.
           </motion.p>
-          
+
           <motion.div 
             className="mt-8 flex flex-wrap gap-4"
             initial={{ opacity: 0, y: 30 }}
@@ -73,7 +77,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* About Preview Section */}
+      {/* About Section */}
       <section className="py-20 bg-neutral-50">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -94,7 +98,7 @@ const HomePage: React.FC = () => {
                 <p className="text-sm uppercase tracking-wider">Years Experience</p>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -123,6 +127,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Additional Sections */}
       <ServicesOverview />
       <FeaturedProjects />
       <Testimonials />
