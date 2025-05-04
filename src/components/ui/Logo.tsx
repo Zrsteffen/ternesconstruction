@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/logo.png'; // adjust path if needed
+import logo from '../../images/logo.png'; // corrected path
 
 interface LogoProps {
   isFooter?: boolean;
