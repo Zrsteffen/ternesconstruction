@@ -1,13 +1,20 @@
 import React from 'react';
-import logo from '../../images/logo.png'; // adjust path if you're in a deeper folder
+import logo from '/src/images/logo.png'; // Absolute path from project root for Vite consistency
 
-const Logo: React.FC = () => {
+interface LogoProps {
+  size?: number; // optional prop to control height
+}
+
+const Logo: React.FC<LogoProps> = ({ size = 80 }) => {
   return (
     <img
       src={logo}
       alt="Ternes Construction"
-      className="h-20 w-auto"
-      loading="lazy"
+      height={size}
+      style={{ height: `${size}px`, width: 'auto' }}
+      className="block"
+      loading="eager"
+      decoding="async"
     />
   );
 };
