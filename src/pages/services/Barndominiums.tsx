@@ -5,7 +5,7 @@ import { CheckCircle2 } from 'lucide-react';
 import SectionTitle from '../../components/ui/SectionTitle';
 import ContactCta from '../../components/home/ContactCta';
 
-// Importing image assets correctly
+// Importing images correctly via Vite
 import barnHero from '../../images/barn_hero.jpg';
 import barnFrame from '../../images/barn_frame.jpg';
 import barnExterior from '../../images/barn_exterior.jpg';
@@ -28,7 +28,11 @@ const Barndominiums: React.FC = () => {
           property="og:description"
           content="Post-frame barndominiums designed for durability and ease—Ternes Construction helps you build with confidence and code compliance."
         />
-        <meta property="og:image" content={barnHero} />
+        {/* Use full image URL for OG tags */}
+        <meta
+          property="og:image"
+          content="https://www.ternesconstruction.com/images/barn_hero.jpg"
+        />
         <meta property="og:type" content="website" />
       </Helmet>
 
