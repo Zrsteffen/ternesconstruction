@@ -10,11 +10,11 @@ const Barndominiums: React.FC = () => {
     <>
       <Helmet>
         <title>Barndominiums & Shop Houses | Ternes Construction</title>
-        <meta name="description" content="Explore the durability and design flexibility of barndominiums with Ternes Construction. Learn how inspection zones and regulations impact cost—and how our team helps you navigate them to build smarter." />
-        <meta name="keywords" content="barndominiums Kansas, shop houses, custom barndo builder, rural construction, metal homes, barndominium costs, low maintenance homes" />
+        <meta name="description" content="Explore the unmatched durability and low-maintenance benefits of barndominiums with Ternes Construction. Build smarter and longer-lasting with our expert team." />
+        <meta name="keywords" content="durable homes, low maintenance barndominiums, metal homes, long lasting construction, shop houses Kansas, custom barndos, Ternes barndominiums" />
         <meta property="og:title" content="Barndominiums & Shop Houses | Ternes Construction" />
-        <meta property="og:description" content="Durable, low-maintenance homes with flexible design—Ternes Construction is your expert guide to building barndominiums in Kansas and beyond." />
-        <meta property="og:image" content="/images/barndominium-hero.jpg" />
+        <meta property="og:description" content="Built to last and made for low upkeep—Ternes Construction delivers barndominiums that outlast traditional homes and simplify life." />
+        <meta property="og:image" content="/images/barn_hero.jpg" />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -23,7 +23,7 @@ const Barndominiums: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
           <img 
-            src="/images/barndominium-hero.jpg"
+            src="/images/barn_hero.jpg"
             alt="Modern barndominium exterior" 
             className="w-full h-full object-cover"
           />
@@ -38,7 +38,7 @@ const Barndominiums: React.FC = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Barndominiums & Shop Houses</h1>
             <p className="text-xl text-white/80 mb-8 max-w-2xl">
-              Smarter construction, built to last—Ternes Construction helps you navigate county requirements, optimize cost, and build your dream space.
+              Long-lasting, low-maintenance, and built for life—Ternes Construction helps you create a barndominium that stands the test of time.
             </p>
           </motion.div>
         </div>
@@ -50,24 +50,27 @@ const Barndominiums: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <SectionTitle 
-                title="Barndominiums Aren’t What They Used to Be" 
-                subtitle="Navigating Cost, Durability & Compliance"
+                title="Built Strong. Built to Last." 
+                subtitle="Why Barndominiums Are the Smarter Choice"
               />
               <div className="space-y-6">
                 <p className="text-neutral-700">
-                  Today’s barndominiums offer more than just metal siding. While they originated as a cost-effective alternative in areas without inspections, many counties now treat them just like traditional homes. That means you may need full footing foundations, residential-grade insulation, and upgraded finishes.
+                  Today’s barndominiums are engineered for exceptional strength and resilience. With steel framing, metal roofing, and composite materials, they resist pests, fire, and severe weather better than traditional wood-framed homes.
                 </p>
                 <p className="text-neutral-700">
-                  Ternes Construction brings deep knowledge of local regulations. We help you identify when a barndominium can actually save you money—and when it might not. Our team consults on the smartest path forward, so you avoid surprises and stay in control of your budget.
+                  While some counties treat barndominiums the same as conventional homes—requiring foundations, insulation, and inspections—Ternes Construction helps you navigate what’s required and when alternative methods may be possible.
+                </p>
+                <p className="text-neutral-700">
+                  We specialize in crafting homes that go the distance. Our clients enjoy reduced maintenance costs, longer lifespans, and modern aesthetics without the headaches of traditional construction upkeep.
                 </p>
 
                 <ul className="space-y-4">
                   {[
-                    "Regulation-savvy guidance",
-                    "Transparent cost forecasting",
-                    "Flexible design options for live/work setups",
-                    "Expertise in both inspected and non-inspected zones",
-                    "Custom solutions for rural builds"
+                    "Structural integrity with steel and engineered components",
+                    "Low maintenance exterior and interior options",
+                    "Improved resistance to rot, termites, and corrosion",
+                    "Weather-ready performance in all Kansas climates",
+                    "Consultation to optimize your design for longevity"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="text-primary-600 mt-1 mr-2" />
@@ -106,16 +109,16 @@ const Barndominiums: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
               {
-                title: "Durability",
-                description: "Steel and engineered materials make barndos incredibly weather-resistant, pest-proof, and long-lasting."
+                title: "Engineered for Strength",
+                description: "Steel frames and paneling provide better protection against time and nature than traditional materials."
               },
               {
-                title: "Low Maintenance",
-                description: "Minimal exterior upkeep and fewer moving parts translate to savings over time."
+                title: "Simplified Upkeep",
+                description: "Low-maintenance finishes mean fewer repairs, less repainting, and long-term savings."
               },
               {
-                title: "Modern Aesthetic",
-                description: "From rustic to refined, today's barndominiums feature stunning finishes inside and out."
+                title: "Modern Efficiency",
+                description: "Metal-clad builds can be sealed tight for energy savings and easier cleaning, indoors and out."
               }
             ].map((benefit, index) => (
               <motion.div
