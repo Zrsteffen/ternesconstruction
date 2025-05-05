@@ -55,22 +55,23 @@ const Barndominiums: React.FC = () => {
               />
               <div className="space-y-6">
                 <p className="text-neutral-700">
-                  Barndominiums have evolved from simple metal structures into versatile, beautiful, and highly efficient homes. Today, counties may require barndos to meet the same inspections, engineering, and insulation standards as traditional builds.
+                  Barndominiums have come a long way. Originally favored for their simplicity in non-regulated counties, today’s barndos often require full inspections, engineered foundations, and residential-grade specs depending on location.
                 </p>
                 <p className="text-neutral-700">
-                  At Ternes Construction, we specialize in post-frame construction—a technique known for its strength, cost-efficiency, and resilience against Kansas’ tough climate. It’s faster to erect, easier to insulate, and requires less foundation work than conventional methods.
+                  Ternes Construction uses proven post-frame building systems—designed to reduce costs, withstand harsh Kansas conditions, and minimize long-term upkeep. No steel frames needed.
                 </p>
                 <p className="text-neutral-700">
-                  We don’t use steel frames. Instead, our focus is on smarter wood post systems that stand the test of time. Our team helps you understand the differences, weigh your options, and choose what’s best based on your budget and your property.
+                  Our expertise lies in navigating code complexity and delivering efficient solutions. We guide you through zoning, permitting, and financing while ensuring your home lasts decades with minimal maintenance.
                 </p>
 
                 <ul className="space-y-4">
-                  {["Engineered post-frame structure designed for longevity and ease of build",
-                    "Durable siding and roofing designed to minimize long-term maintenance",
-                    "Custom layouts that support living + work functionality",
-                    "Energy-efficient designs that reduce monthly utilities",
-                    "Expert consultation to navigate permitting and county code requirements"]
-                  .map((item, index) => (
+                  {[
+                    "Post-frame structure optimized for speed and strength",
+                    "Durable exteriors designed to reduce ongoing maintenance",
+                    "Adaptable to rural properties and code-compliant for regulated zones",
+                    "No steel frame required—more cost-effective with the same look",
+                    "Smart consulting to avoid surprises and control costs"
+                  ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="text-primary-600 mt-1 mr-2" />
                       <span>{item}</span>
@@ -113,11 +114,11 @@ const Barndominiums: React.FC = () => {
               },
               {
                 title: "Long-Term Value",
-                description: "Post-frame shells provide superior protection from moisture, shifting, and pests. Built to perform year after year."
+                description: "Well-sealed post-frame shells keep your utilities low and protect against moisture and pests."
               },
               {
-                title: "Smart Construction, Real Savings",
-                description: "We help you choose the right specs for your county’s rules—so you don’t overbuild or overlook key requirements."
+                title: "Code-Ready Design",
+                description: "Whether you're in a rural township or regulated county, we design to comply and optimize cost."
               }
             ].map((benefit, index) => (
               <motion.div
@@ -136,40 +137,7 @@ const Barndominiums: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Work */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 md:px-8">
-          <SectionTitle 
-            title="Featured Barndominiums" 
-            subtitle="Custom-Built with Integrity" 
-            center
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {[1, 2, 3].map((project, index) => (
-              <motion.div
-                key={index}
-                className="bg-neutral-50 rounded-lg overflow-hidden shadow-md"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <img 
-                  src={`/images/barndo-project-${project}.jpg`}
-                  alt={`Barndominium project ${project}`} 
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Project Name</h3>
-                  <p className="text-neutral-600">See how we brought each client’s vision to life with our proven process and craftsmanship.</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Contact CTA */}
       <ContactCta />
     </>
   );
