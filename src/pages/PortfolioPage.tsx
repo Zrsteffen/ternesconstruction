@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Play, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import SectionTitle from '../components/ui/SectionTitle';
+import portfolioHero from '../images/portfolio_hero.jpg'; // ✅ Use local optimized image
 
 const projects = [
   {
@@ -62,26 +63,27 @@ const PortfolioPage: React.FC = () => {
       <Helmet>
         <title>Project Portfolio | Ternes Construction</title>
         <meta name="description" content="Explore our portfolio of custom homes, barndominiums, and rural builds across Wichita and Kansas." />
+        <meta property="og:title" content="Project Portfolio | Ternes Construction" />
+        <meta property="og:description" content="Explore our portfolio of custom homes, barndominiums, and rural builds across Wichita and Kansas." />
+        <meta property="og:image" content="/images/portfolio_hero.jpg" />
+        <meta property="og:url" content="https://ternesconstruction.com/portfolio" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Project Portfolio | Ternes Construction" />
+        <meta name="twitter:description" content="See our latest completed custom homes and barndominiums." />
+        <meta name="twitter:image" content="/images/portfolio_hero.jpg" />
       </Helmet>
 
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/50 z-10" />
-          <video 
-            autoPlay 
-            muted 
-            loop 
+          <img 
+            src={portfolioHero}
+            alt="Ternes Construction project portfolio"
             className="w-full h-full object-cover"
-            poster="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
-          >
-            <source src="/videos/portfolio-hero.mp4" type="video/mp4" />
-            <img 
-              src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg" 
-              alt="Construction site" 
-              className="w-full h-full object-cover"
-            />
-          </video>
+            loading="lazy"
+          />
         </div>
         
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
@@ -104,9 +106,9 @@ const PortfolioPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Category Filters */}
       <section className="py-16 bg-neutral-50">
         <div className="container mx-auto px-4">
-          {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (
               <button
@@ -138,7 +140,7 @@ const PortfolioPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Project Modal */}
+      {/* Modal */}
       {selectedProject && (
         <ProjectModal
           project={projects.find(p => p.id === selectedProject)!}
@@ -153,14 +155,9 @@ const ProjectCard: React.FC<{
   project: typeof projects[0];
   onClick: () => void;
 }> = ({ project, onClick }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Auto-advance images
   React.useEffect(() => {
     if (inView) {
       const timer = setInterval(() => {
@@ -194,7 +191,6 @@ const ProjectCard: React.FC<{
             transition={{ duration: 0.5 }}
           />
         </AnimatePresence>
-        
         <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
           <button
             onClick={onClick}
@@ -204,7 +200,6 @@ const ProjectCard: React.FC<{
           </button>
         </div>
       </div>
-      
       <div className="p-6">
         <span className="text-sm font-medium text-primary-600">{project.category}</span>
         <h3 className="text-xl font-bold mt-1">{project.title}</h3>
@@ -220,10 +215,7 @@ const ProjectModal: React.FC<{
 }> = ({ project, onClose }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div 
-        className="absolute inset-0 bg-black/70"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/70" onClick={onClose} />
       <div className="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
@@ -233,11 +225,9 @@ const ProjectModal: React.FC<{
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        
         <div className="p-6">
           <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
           <p className="text-neutral-600 mb-6">{project.description}</p>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {project.images.map((image, index) => (
               <img
@@ -248,7 +238,6 @@ const ProjectModal: React.FC<{
               />
             ))}
           </div>
-          
           <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
             <div>
               <strong className="block text-neutral-900">Location</strong>
