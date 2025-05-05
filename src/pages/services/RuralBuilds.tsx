@@ -5,7 +5,7 @@ import { CheckCircle2 } from 'lucide-react';
 import SectionTitle from '../../components/ui/SectionTitle';
 import ContactCta from '../../components/home/ContactCta';
 
-// ✅ Correct image import
+// Image import via Vite module system
 import ruralHero from '../../images/rural_hero.jpg';
 
 const RuralBuilds: React.FC = () => {
@@ -17,7 +17,16 @@ const RuralBuilds: React.FC = () => {
           name="description"
           content="Specialized in rural construction projects with expertise in well systems, septic solutions, and off-grid considerations."
         />
-        <meta property="og:image" content={ruralHero} />
+        <meta property="og:title" content="Rural Builds | Ternes Construction" />
+        <meta
+          property="og:description"
+          content="Expert rural construction with full-service planning, infrastructure, and compliance. We help bring your dream build to life."
+        />
+        <meta
+          property="og:image"
+          content="https://www.ternesconstruction.com/images/rural_hero.jpg"
+        />
+        <meta property="og:type" content="website" />
       </Helmet>
 
       {/* Hero Section */}
@@ -40,7 +49,7 @@ const RuralBuilds: React.FC = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Rural Builds</h1>
             <p className="text-xl text-white/80 mb-8 max-w-2xl">
-              Expert solutions for rural construction with comprehensive site planning and infrastructure
+              Expert solutions for rural construction with comprehensive site planning and infrastructure.
             </p>
           </motion.div>
         </div>
