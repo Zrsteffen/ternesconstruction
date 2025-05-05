@@ -14,7 +14,7 @@ const Barndominiums: React.FC = () => {
         <meta name="keywords" content="Kansas barndominium builder, post frame homes, durable shop houses, low maintenance construction, custom barndos, barndominiums Kansas, rural home builder" />
         <meta property="og:title" content="Barndominiums & Shop Houses | Ternes Construction" />
         <meta property="og:description" content="Post-frame barndominiums designed for durability and ease—Ternes Construction helps you build with confidence and code compliance." />
-        <meta property="og:image" content="/images/barn_hero.JPG" />
+        <meta property="og:image" content="/images/barn_hero.jpg" />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -23,7 +23,7 @@ const Barndominiums: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
           <img 
-            src="/images/barn_hero.JPG"
+            src="/images/barn_hero.jpg"
             alt="Modern post-frame barndominium" 
             className="w-full h-full object-cover"
           />
@@ -55,23 +55,22 @@ const Barndominiums: React.FC = () => {
               />
               <div className="space-y-6">
                 <p className="text-neutral-700">
-                  Barndominiums have come a long way. Originally favored for their simplicity in non-regulated counties, today’s barndos often require full inspections, engineered foundations, and residential-grade specs depending on location.
+                  Barndominiums have evolved from simple metal structures into versatile, beautiful, and highly efficient homes. Today, counties may require barndos to meet the same inspections, engineering, and insulation standards as traditional builds.
                 </p>
                 <p className="text-neutral-700">
-                  Ternes Construction uses proven post-frame building systems—designed to reduce costs, withstand harsh Kansas conditions, and minimize long-term upkeep. No steel frames needed.
+                  At Ternes Construction, we specialize in post-frame construction—a technique known for its strength, cost-efficiency, and resilience against Kansas’ tough climate. It’s faster to erect, easier to insulate, and requires less foundation work than conventional methods.
                 </p>
                 <p className="text-neutral-700">
-                  Our expertise lies in navigating code complexity and delivering efficient solutions. We guide you through zoning, permitting, and financing while ensuring your home lasts decades with minimal maintenance.
+                  We don’t use steel frames. Instead, our focus is on smarter wood post systems that stand the test of time. Our team helps you understand the differences, weigh your options, and choose what’s best based on your budget and your property.
                 </p>
 
                 <ul className="space-y-4">
-                  {[
-                    "Post-frame structure optimized for speed and strength",
-                    "Durable exteriors designed to reduce ongoing maintenance",
-                    "Adaptable to rural properties and code-compliant for regulated zones",
-                    "No steel frame required—more cost-effective with the same look",
-                    "Smart consulting to avoid surprises and control costs"
-                  ].map((item, index) => (
+                  {["Engineered post-frame structure designed for longevity and ease of build",
+                    "Durable siding and roofing designed to minimize long-term maintenance",
+                    "Custom layouts that support living + work functionality",
+                    "Energy-efficient designs that reduce monthly utilities",
+                    "Expert consultation to navigate permitting and county code requirements"]
+                  .map((item, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="text-primary-600 mt-1 mr-2" />
                       <span>{item}</span>
@@ -83,12 +82,12 @@ const Barndominiums: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="/images/barndo-1.jpg" 
+                src="/images/barn_frame.jpg" 
                 alt="Barndominium kitchen and living area" 
                 className="rounded-lg shadow-lg"
               />
               <img 
-                src="/images/barndo-2.jpg" 
+                src="/images/barn_exterior.JPG" 
                 alt="Exterior of post-frame barndominium" 
                 className="rounded-lg shadow-lg"
               />
@@ -114,11 +113,11 @@ const Barndominiums: React.FC = () => {
               },
               {
                 title: "Long-Term Value",
-                description: "Well-sealed post-frame shells keep your utilities low and protect against moisture and pests."
+                description: "Post-frame shells provide superior protection from moisture, shifting, and pests. Built to perform year after year."
               },
               {
-                title: "Code-Ready Design",
-                description: "Whether you're in a rural township or regulated county, we design to comply and optimize cost."
+                title: "Smart Construction, Real Savings",
+                description: "We help you choose the right specs for your county’s rules—so you don’t overbuild or overlook key requirements."
               }
             ].map((benefit, index) => (
               <motion.div
