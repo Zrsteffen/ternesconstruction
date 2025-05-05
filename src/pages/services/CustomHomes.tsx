@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 
+import buildProcessHero from '../../images/build_process_hero.jpg';
+
 const buildSteps = [
   {
     title: '1. Bank Pre-Approval',
@@ -64,7 +66,7 @@ const CustomBuildProcess: React.FC = () => {
 
       <section
         className="relative h-[60vh] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white"
-        style={{ backgroundImage: "url('/images/build_process_hero.jpg')" }}
+        style={{ backgroundImage: `url(${buildProcessHero})` }}
       >
         <div className="bg-black/60 absolute inset-0 z-0" />
         <div className="relative z-10 text-center px-4">
