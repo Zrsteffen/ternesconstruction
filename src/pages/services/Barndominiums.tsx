@@ -10,10 +10,10 @@ const Barndominiums: React.FC = () => {
     <>
       <Helmet>
         <title>Barndominiums & Shop Houses | Ternes Construction</title>
-        <meta name="description" content="Explore the unmatched durability and low-maintenance benefits of barndominiums with Ternes Construction. Build smarter and longer-lasting with our expert team." />
-        <meta name="keywords" content="durable homes, low maintenance barndominiums, metal homes, long lasting construction, shop houses Kansas, custom barndos, Ternes barndominiums" />
+        <meta name="description" content="Explore durable, low-maintenance barndominiums built by Ternes Construction using post-frame techniques. Learn how we help you navigate codes and build smarter." />
+        <meta name="keywords" content="Kansas barndominium builder, post frame homes, durable shop houses, low maintenance construction, custom barndos, barndominiums Kansas, rural home builder" />
         <meta property="og:title" content="Barndominiums & Shop Houses | Ternes Construction" />
-        <meta property="og:description" content="Built to last and made for low upkeep—Ternes Construction delivers barndominiums that outlast traditional homes and simplify life." />
+        <meta property="og:description" content="Post-frame barndominiums designed for durability and ease—Ternes Construction helps you build with confidence and code compliance." />
         <meta property="og:image" content="/images/barn_hero.jpg" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -24,7 +24,7 @@ const Barndominiums: React.FC = () => {
           <div className="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
           <img 
             src="/images/barn_hero.jpg"
-            alt="Modern barndominium exterior" 
+            alt="Modern post-frame barndominium" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -38,7 +38,7 @@ const Barndominiums: React.FC = () => {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Barndominiums & Shop Houses</h1>
             <p className="text-xl text-white/80 mb-8 max-w-2xl">
-              Long-lasting, low-maintenance, and built for life—Ternes Construction helps you create a barndominium that stands the test of time.
+              Smarter builds, less upkeep—our post-frame barndominiums are built to last and tailored to your land, lifestyle, and local regulations.
             </p>
           </motion.div>
         </div>
@@ -50,27 +50,27 @@ const Barndominiums: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <SectionTitle 
-                title="Built Strong. Built to Last." 
-                subtitle="Why Barndominiums Are the Smarter Choice"
+                title="Smarter Materials. Strategic Builds." 
+                subtitle="Why Post-Frame Barndominiums Are a Win" 
               />
               <div className="space-y-6">
                 <p className="text-neutral-700">
-                  Today’s barndominiums are engineered for exceptional strength and resilience. With steel framing, metal roofing, and composite materials, they resist pests, fire, and severe weather better than traditional wood-framed homes.
+                  Barndominiums have come a long way. Originally favored for their simplicity in non-regulated counties, today’s barndos often require full inspections, engineered foundations, and residential-grade specs depending on location.
                 </p>
                 <p className="text-neutral-700">
-                  While some counties treat barndominiums the same as conventional homes—requiring foundations, insulation, and inspections—Ternes Construction helps you navigate what’s required and when alternative methods may be possible.
+                  Ternes Construction uses proven post-frame building systems—designed to reduce costs, withstand harsh Kansas conditions, and minimize long-term upkeep. No steel frames needed.
                 </p>
                 <p className="text-neutral-700">
-                  We specialize in crafting homes that go the distance. Our clients enjoy reduced maintenance costs, longer lifespans, and modern aesthetics without the headaches of traditional construction upkeep.
+                  Our expertise lies in navigating code complexity and delivering efficient solutions. We guide you through zoning, permitting, and financing while ensuring your home lasts decades with minimal maintenance.
                 </p>
 
                 <ul className="space-y-4">
                   {[
-                    "Structural integrity with steel and engineered components",
-                    "Low maintenance exterior and interior options",
-                    "Improved resistance to rot, termites, and corrosion",
-                    "Weather-ready performance in all Kansas climates",
-                    "Consultation to optimize your design for longevity"
+                    "Post-frame structure optimized for speed and strength",
+                    "Durable exteriors designed to reduce ongoing maintenance",
+                    "Adaptable to rural properties and code-compliant for regulated zones",
+                    "No steel frame required—more cost-effective with the same look",
+                    "Smart consulting to avoid surprises and control costs"
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle2 className="text-primary-600 mt-1 mr-2" />
@@ -84,12 +84,12 @@ const Barndominiums: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <img 
                 src="/images/barndo-1.jpg" 
-                alt="Barndominium interior" 
+                alt="Barndominium kitchen and living area" 
                 className="rounded-lg shadow-lg"
               />
               <img 
                 src="/images/barndo-2.jpg" 
-                alt="Barndominium exterior" 
+                alt="Exterior of post-frame barndominium" 
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -102,23 +102,23 @@ const Barndominiums: React.FC = () => {
         <div className="container mx-auto px-4 md:px-8">
           <SectionTitle 
             title="Built to Endure" 
-            subtitle="Why Barndominiums Last Longer"
+            subtitle="Low Maintenance. High Performance." 
             center
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[
               {
-                title: "Engineered for Strength",
-                description: "Steel frames and paneling provide better protection against time and nature than traditional materials."
+                title: "Less Upkeep, More Living",
+                description: "With metal siding and roofing, you can forget repainting, rot, or storm damage headaches."
               },
               {
-                title: "Simplified Upkeep",
-                description: "Low-maintenance finishes mean fewer repairs, less repainting, and long-term savings."
+                title: "Long-Term Value",
+                description: "Well-sealed post-frame shells keep your utilities low and protect against moisture and pests."
               },
               {
-                title: "Modern Efficiency",
-                description: "Metal-clad builds can be sealed tight for energy savings and easier cleaning, indoors and out."
+                title: "Code-Ready Design",
+                description: "Whether you're in a rural township or regulated county, we design to comply and optimize cost."
               }
             ].map((benefit, index) => (
               <motion.div
@@ -142,7 +142,7 @@ const Barndominiums: React.FC = () => {
         <div className="container mx-auto px-4 md:px-8">
           <SectionTitle 
             title="Featured Barndominiums" 
-            subtitle="Built with Experience and Care"
+            subtitle="Custom-Built with Integrity" 
             center
           />
 
@@ -163,7 +163,7 @@ const Barndominiums: React.FC = () => {
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">Project Name</h3>
-                  <p className="text-neutral-600">Description of the barndominium project and its unique features.</p>
+                  <p className="text-neutral-600">See how we brought each client’s vision to life with our proven process and craftsmanship.</p>
                 </div>
               </motion.div>
             ))}
