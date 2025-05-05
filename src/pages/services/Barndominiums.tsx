@@ -87,7 +87,7 @@ const Barndominiums: React.FC = () => {
                 className="rounded-lg shadow-lg"
               />
               <img 
-                src="/images/barn_exterior.JPG" 
+                src="/images/barn_exterior.jpg" 
                 alt="Exterior of post-frame barndominium" 
                 className="rounded-lg shadow-lg"
               />
