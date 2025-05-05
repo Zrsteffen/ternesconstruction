@@ -41,38 +41,36 @@ const AboutPage: React.FC = () => {
         <meta name="description" content="Meet Jamie and Jordan Ternes — the builder-direct team behind Wichita’s trusted custom home construction company. Learn how their hands-on approach ensures your dream home becomes a reality." />
       </Helmet>
 
-      {/* Hero Image Section */}
-      <section className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-screen">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={aboutUs}
-            alt="Ternes Construction About Us Hero"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-        </div>
+        {/* Hero Image Section */}
+        <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={aboutUs}
+              alt="Ternes Construction About Us Hero"
+              className="w-full h-full object-cover object-center brightness-[0.95]"
+            />
+            <div className="absolute inset-0 bg-black/20 z-10" />
+          </div>
+        
+          <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                Meet Your Builder-Direct Team
+              </h1>
+              <p className="text-xl text-white/90 max-w-2xl">
+                A family-run operation driven by transparency, craftsmanship, and a commitment to treating every build like it’s our own.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+        
+        <section className="py-20 bg-neutral-50">
 
-        <div className="relative z-20 container mx-auto px-4 md:px-8 h-full flex flex-col justify-center pt-32">
-          <motion.h1
-            className="text-white text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Meet Your Builder-Direct Team
-          </motion.h1>
-          <motion.p
-            className="text-white text-xl mt-6 max-w-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            A family-run operation driven by transparency, craftsmanship, and a commitment to treating every build like it’s our own.
-          </motion.p>
-        </div>
-      </section>
-
-      <section className="py-20 bg-neutral-50">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <SectionTitle
             title="Who We Are"
