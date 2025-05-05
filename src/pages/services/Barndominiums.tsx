@@ -14,7 +14,7 @@ const Barndominiums: React.FC = () => {
         <meta name="keywords" content="Kansas barndominium builder, post frame homes, durable shop houses, low maintenance construction, custom barndos, barndominiums Kansas, rural home builder" />
         <meta property="og:title" content="Barndominiums & Shop Houses | Ternes Construction" />
         <meta property="og:description" content="Post-frame barndominiums designed for durability and ease—Ternes Construction helps you build with confidence and code compliance." />
-        <meta property="og:image" content="/images/barn_hero.jpg" />
+        <meta property="og:image" content="/images/barn_hero.JPG" />
         <meta property="og:type" content="website" />
       </Helmet>
 
@@ -23,7 +23,7 @@ const Barndominiums: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
           <img 
-            src="/images/barn_hero.jpg"
+            src="/images/barn_hero.JPG"
             alt="Modern post-frame barndominium" 
             className="w-full h-full object-cover"
           />
