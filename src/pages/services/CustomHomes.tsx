@@ -62,6 +62,7 @@ const CustomBuildProcess: React.FC = () => {
           name="description"
           content="We guide you through every phase of your custom home—from bank approval to move-in—helping reduce stress and create clarity at every step."
         />
+        <meta property="og:image" content={buildProcessHero} />
       </Helmet>
 
       <section
