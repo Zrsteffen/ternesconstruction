@@ -30,30 +30,34 @@ const RuralBuilds: React.FC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-neutral-900 text-white">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black bg-opacity-70 z-10" />
-          <img
-            src={ruralHero}
-            alt="Rural custom home"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+  <div className="absolute inset-0 z-0">
+    <img
+      src={barnHero}
+      alt="Modern post-frame barndominium"
+      className="w-full h-full object-cover object-center brightness-[0.95]"
+    />
+    <div className="absolute inset-0 bg-black/20 z-10" />
+  </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Rural Builds</h1>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl">
-              Expert solutions for rural construction with comprehensive site planning and infrastructure.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="max-w-3xl"
+    >
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        Barndominiums & Shop Houses
+      </h1>
+      <p className="text-xl text-white/90 mb-8 max-w-2xl">
+        Smarter builds, less upkeep—our post-frame barndominiums are built to last and tailored
+        to your land, lifestyle, and local regulations.
+      </p>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section className="py-20 bg-white">
