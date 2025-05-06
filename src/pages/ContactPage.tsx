@@ -83,7 +83,7 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Contact Form */}
-      <div className="container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-20">
         <SectionTitle
           title="Get in Touch"
           subtitle="Let’s Build Something Together"
