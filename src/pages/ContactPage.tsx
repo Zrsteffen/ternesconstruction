@@ -1,20 +1,64 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SectionTitle from '../components/ui/SectionTitle';
+import contactHero from '../images/testimonial_hero.jpg';
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   return (
     <>
       <Helmet>
         <title>Contact Us | Ternes Construction</title>
-        <meta name="description" content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life." />
+        <meta
+          name="description"
+          content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life."
+        />
+        <meta property="og:title" content="Contact Us | Ternes Construction" />
+        <meta
+          property="og:description"
+          content="Contact Ternes Construction — a trusted builder in Wichita, Kansas. Reach out to start planning your dream custom home."
+        />
+        <meta property="og:image" content="https://www.ternesconstruction.com/images/testimonial_hero.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.ternesconstruction.com/contact" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Ternes Construction" />
+        <meta
+          name="twitter:description"
+          content="Contact Ternes Construction to get started on your custom home build in Wichita, KS."
+        />
+        <meta name="twitter:image" content="https://www.ternesconstruction.com/images/testimonial_hero.jpg" />
       </Helmet>
 
-      <div className="container mx-auto px-4 py-16">
+      {/* Hero Section */}
+      <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={contactHero}
+            alt="Contact Ternes Construction"
+            className="w-full h-full object-cover object-center brightness-[0.95]"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-black/20 z-10" />
+        </div>
+
+        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Contact Ternes Construction
+            </h1>
+            <p className="text-xl text-white/90 max-w-2xl">
+              Have a question or want to work together? We’d love to hear from you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <div className="container mx-auto px-4 py-20">
         <SectionTitle
-          title="Contact Us"
-          subtitle="Get in Touch"
-          description="Have a question or want to work together? We'd love to hear from you."
+          title="Get in Touch"
+          subtitle="Start Your Build Journey"
+          description="Tell us about your project — we’re ready to help bring it to life."
         />
 
         <div className="max-w-3xl mx-auto mt-12">
@@ -82,6 +126,7 @@ const ContactPage = () => {
             </div>
           </form>
 
+          {/* Contact Info */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <h3 className="text-lg font-medium text-gray-900">Email</h3>
