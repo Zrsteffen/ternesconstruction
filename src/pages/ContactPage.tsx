@@ -1,32 +1,42 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import SectionTitle from '../components/ui/SectionTitle';
-import testimonialHero from '../images/testimonial_hero.jpg';
+import heroImage from '../images/testimonial_hero.jpg';
 
-const ContactPage: React.FC = () => {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
+    setStatus('idle');
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzjrdPcsGOal5hrGQ0k7cwB4_GXSrbK61lVf3jcVKZTBG8PVDPg2qG85dpPU2lAE6En/exec', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        form.reset();
-      } else {
-        setStatus('error');
-      }
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbzjrdPcsGOal5hrGQ0k7cwB4_GXSrbK61lVf3jcVKZTBG8PVDPg2qG85dpPU2lAE6En/exec',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams(formData).toString()
+        }
+      );
+      setStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error('Form submission failed:', error);
+      console.error('Form submission error:', error);
       setStatus('error');
     }
   };
@@ -37,41 +47,38 @@ const ContactPage: React.FC = () => {
         <title>Contact Us | Ternes Construction</title>
         <meta name="description" content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life." />
         <meta property="og:title" content="Contact Us | Ternes Construction" />
-        <meta property="og:description" content="Get in touch with our builder-direct team to start planning your custom home, barndominium, or rural build." />
-        <meta property="og:image" content="https://www.ternesconstruction.com/images/testimonial_hero.jpg" />
+        <meta property="og:description" content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life." />
+        <meta property="og:image" content="/images/testimonial_hero.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ternesconstruction.com/contact" />
       </Helmet>
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={testimonialHero}
-            alt="Contact Ternes Construction"
-            className="w-full h-full object-cover object-center brightness-[0.95]"
-          />
-          <div className="absolute inset-0 bg-black/20 z-10" />
+          <img src={heroImage} alt="Contact Us Hero" className="w-full h-full object-cover object-center brightness-[0.95]" />
+          <div className="absolute inset-0 bg-black/30 z-10" />
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-white/90 max-w-2xl">
-              Let’s talk about your project. We’ll get back to you as soon as possible.
+              We’d love to learn more about your project. Reach out to discuss how we can help bring your vision to life.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Form Section */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-16">
         <SectionTitle
           title="Get in Touch"
-          subtitle="Tell us about your goals"
-          description="We’d love to hear from you. Please fill out the form below and we’ll respond shortly."
+          subtitle="Let's Build Something Together"
+          description="Have a question or want to work together? We'd love to hear from you."
         />
 
         <div className="max-w-3xl mx-auto mt-12">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -81,8 +88,10 @@ const ContactPage: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
-                  required
+                  value={formData.name}
+                  onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  required
                 />
               </div>
               <div>
@@ -93,8 +102,10 @@ const ContactPage: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
-                  required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  required
                 />
               </div>
             </div>
@@ -107,8 +118,10 @@ const ContactPage: React.FC = () => {
                 type="text"
                 id="subject"
                 name="subject"
-                required
+                value={formData.subject}
+                onChange={handleChange}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                required
               />
             </div>
 
@@ -120,8 +133,10 @@ const ContactPage: React.FC = () => {
                 id="message"
                 name="message"
                 rows={6}
-                required
+                value={formData.message}
+                onChange={handleChange}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                required
               ></textarea>
             </div>
 
@@ -130,16 +145,37 @@ const ContactPage: React.FC = () => {
                 type="submit"
                 className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
               >
-                {status === 'sending'
-                  ? 'Sending...'
-                  : status === 'success'
-                  ? 'Message Sent!'
-                  : status === 'error'
-                  ? 'Something went wrong. Try again.'
-                  : 'Send Message'}
+                Send Message
               </button>
+              {status === 'success' && (
+                <p className="text-green-600 text-center mt-4">Message sent successfully!</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-600 text-center mt-4">Something went wrong. Please try again later.</p>
+              )}
             </div>
           </form>
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <h3 className="text-lg font-medium text-gray-900">Email</h3>
+              <p className="mt-2 text-gray-600">info@ternesconstruction.com</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-medium text-gray-900">Phone</h3>
+              <p className="mt-2 text-gray-600">
+                Jamie: (316) 644-2410<br />
+                Jordan: (316) 644-2481
+              </p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-lg font-medium text-gray-900">Location</h3>
+              <p className="mt-2 text-gray-600">
+                Wichita, Kansas<br />
+                Serving Wichita and surrounding areas
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>
