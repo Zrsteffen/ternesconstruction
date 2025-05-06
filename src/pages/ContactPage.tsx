@@ -26,15 +26,19 @@ const ContactPage = () => {
         'https://script.google.com/macros/s/AKfycbzjrdPcsGOal5hrGQ0k7cwB4_GXSrbK61lVf3jcVKZTBG8PVDPg2qG85dpPU2lAE6En/exec',
         {
           method: 'POST',
-          mode: 'no-cors',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
           body: new URLSearchParams(formData).toString()
         }
       );
-      setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Submission failed');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       setStatus('error');
