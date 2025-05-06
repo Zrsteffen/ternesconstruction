@@ -23,8 +23,7 @@ const ContactPage = () => {
     e.preventDefault();
     setStatus('idle');
     try {
-      const response = await fetch(
-        const response = await fetch('https://zrsteffen.app.n8n.cloud/webhook-test/contact-form-webhook',
+      const response = await fetch('https://zrsteffen.app.n8n.cloud/webhook-test/contact-form-webhook',
 
         {
           method: 'POST',
