@@ -7,6 +7,7 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '', // ✅ Added phone
     subject: '',
     message: ''
   });
@@ -35,7 +36,7 @@ const ContactPage = () => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
       } else {
         throw new Error('Submission failed');
       }
@@ -112,6 +113,22 @@ const ContactPage = () => {
                   required
                 />
               </div>
+            </div>
+
+            {/* ✅ New Phone Number Field */}
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                required
+              />
             </div>
 
             <div>
