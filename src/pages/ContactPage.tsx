@@ -24,7 +24,8 @@ const ContactPage = () => {
     setStatus('idle');
     try {
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbzjrdPcsGOal5hrGQ0k7cwB4_GXSrbK61lVf3jcVKZTBG8PVDPg2qG85dpPU2lAE6En/exec',
+        const response = await fetch('https://zrsteffen.app.n8n.cloud/webhook-test/contact-form-webhook',
+
         {
           method: 'POST',
           headers: {
