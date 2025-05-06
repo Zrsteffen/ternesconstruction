@@ -39,7 +39,17 @@ const AboutPage: React.FC = () => {
       <Helmet>
         <title>About Us | Ternes Construction | Custom Home Builders</title>
         <meta name="description" content="Meet Jamie and Jordan Ternes — the builder-direct team behind Wichita’s trusted custom home construction company. Learn how their hands-on approach ensures your dream home becomes a reality." />
+        <meta property="og:title" content="About Us | Ternes Construction" />
+        <meta property="og:description" content="Meet Jamie and Jordan Ternes — the builder-direct team behind Wichita’s trusted custom home construction company." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.ternesconstruction.com/images/about-us.jpg" />
+        <meta property="og:url" content="https://www.ternesconstruction.com/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Ternes Construction" />
+        <meta name="twitter:description" content="Meet Jamie and Jordan Ternes — builder-direct custom home experts in Wichita, KS." />
+        <meta name="twitter:image" content="https://www.ternesconstruction.com/images/about-us.jpg" />
       </Helmet>
+
 
         {/* Hero Image Section */}
         <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
