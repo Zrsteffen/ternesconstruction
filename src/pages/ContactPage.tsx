@@ -1,36 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
 import SectionTitle from '../components/ui/SectionTitle';
 import testimonialHero from '../images/testimonial_hero.jpg';
 
 const ContactPage: React.FC = () => {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus('sending');
+
     const form = e.currentTarget;
-    const formData = {
-      name: (form.elements.namedItem('name') as HTMLInputElement).value,
-      email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      subject: (form.elements.namedItem('subject') as HTMLInputElement).value,
-      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
-    };
+    const formData = new FormData(form);
 
-    const response = await fetch(
-      'https://script.google.com/macros/s/AKfycbzjrdPcsGOal5hrGQ0k7cwB4_GXSrbK61lVf3jcVKZTBG8PVDPg2qG85dpPU2lAE6En/exec',
-      {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzjrdPcsGOal5hrGQ0k7cwB4_GXSrbK61lVf3jcVKZTBG8PVDPg2qG85dpPU2lAE6En/exec', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      }
-    );
+        body: formData,
+      });
 
-    if (response.ok) {
-      alert('Message sent successfully!');
-      form.reset();
-    } else {
-      alert('There was an issue sending your message. Please try again.');
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission failed:', error);
+      setStatus('error');
     }
   };
 
@@ -38,23 +35,13 @@ const ContactPage: React.FC = () => {
     <>
       <Helmet>
         <title>Contact Us | Ternes Construction</title>
-        <meta
-          name="description"
-          content="Contact Ternes Construction to discuss your dream build. We’re ready to help you plan, budget, and build with confidence."
-        />
+        <meta name="description" content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life." />
         <meta property="og:title" content="Contact Us | Ternes Construction" />
-        <meta
-          property="og:description"
-          content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life."
-        />
-        <meta
-          property="og:image"
-          content="https://www.ternesconstruction.com/images/testimonial_hero.jpg"
-        />
-        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Get in touch with our builder-direct team to start planning your custom home, barndominium, or rural build." />
+        <meta property="og:image" content="https://www.ternesconstruction.com/images/testimonial_hero.jpg" />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
@@ -66,32 +53,25 @@ const ContactPage: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Contact Ternes Construction
-            </h1>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-white/90 max-w-2xl">
-              Let’s talk about your project. We’re ready to help you plan, budget, and build with confidence.
+              Let’s talk about your project. We’ll get back to you as soon as possible.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Form Section */}
       <div className="relative z-10 container mx-auto px-4 py-20">
         <SectionTitle
           title="Get in Touch"
-          subtitle="Let’s Build Something Together"
-          description="Fill out the form and we’ll follow up promptly. We look forward to connecting."
+          subtitle="Tell us about your goals"
+          description="We’d love to hear from you. Please fill out the form below and we’ll respond shortly."
         />
 
         <div className="max-w-3xl mx-auto mt-12">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -150,31 +130,16 @@ const ContactPage: React.FC = () => {
                 type="submit"
                 className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
               >
-                Send Message
+                {status === 'sending'
+                  ? 'Sending...'
+                  : status === 'success'
+                  ? 'Message Sent!'
+                  : status === 'error'
+                  ? 'Something went wrong. Try again.'
+                  : 'Send Message'}
               </button>
             </div>
           </form>
-
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <h3 className="text-lg font-medium text-gray-900">Email</h3>
-              <p className="mt-2 text-gray-600">info@ternesconstruction.com</p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-              <p className="mt-2 text-gray-600">
-                Jamie: (316) 644-2410<br />
-                Jordan: (316) 644-2481
-              </p>
-            </div>
-            <div className="text-center">
-              <h3 className="text-lg font-medium text-gray-900">Location</h3>
-              <p className="mt-2 text-gray-600">
-                Wichita, Kansas<br />
-                Serving Wichita and surrounding areas
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </>
