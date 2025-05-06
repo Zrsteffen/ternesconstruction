@@ -18,64 +18,76 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Ternes Construction | Custom Homes in Wichita, KS</title>
-        <meta name="description" content="Family-owned custom home builder in Wichita, Kansas. Specializing in custom homes, barndominiums, and rural builds with transparency and craftsmanship." />
-        <meta property="og:title" content="Ternes Construction | Custom Homes in Wichita, KS" />
-        <meta property="og:description" content="Family-owned custom home builder in Wichita, Kansas. Specializing in custom homes, barndominiums, and rural builds with transparency and craftsmanship." />
+        <title>Your Page Title | Ternes Construction</title>
+        <meta name="description" content="1–2 sentence compelling description focused on the page’s value and keywords." />
+        <meta name="keywords" content="custom homes, barndominiums, Wichita builders, rural home construction, Ternes Construction" />
+      
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="Your Page Title | Ternes Construction" />
+        <meta property="og:description" content="Same compelling description as above, written in natural language." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ternesconstruction.com" />
-        <meta property="og:image" content="/images/hero-house.jpg" />
+        <meta property="og:url" content="https://www.ternesconstruction.com/your-page-slug" />
+        <meta property="og:image" content="https://www.ternesconstruction.com/images/your-image.jpg" />
+      
+        {/* Optional: Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Your Page Title | Ternes Construction" />
+        <meta name="twitter:description" content="Same compelling description as above." />
+        <meta name="twitter:image" content="https://www.ternesconstruction.com/images/your-image.jpg" />
       </Helmet>
 
+
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-screen">
-        {/* Background image + overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroHouse} 
-            alt="Hero custom home exterior" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-        </div>
+        <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src={heroHouse}
+              alt="Hero custom home exterior"
+              className="w-full h-full object-cover object-center brightness-[0.95]"
+            />
+            <div className="absolute inset-0 bg-black/20 z-10" />
+          </div>
+        
+          <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold max-w-3xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Custom Homes.<br />
+              Family Values.<br />
+              Builder-Direct.
+            </motion.h1>
+        
+            <motion.p
+              className="text-xl text-white/90 mt-6 max-w-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Over 15 years of hands-on craftsmanship building custom homes, barndominiums, and rural properties across Wichita and beyond.
+            </motion.p>
+        
+            <motion.div
+              className="mt-8 flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Link to="/contact" className="btn btn-primary text-lg px-8 py-4">
+                Start Your Dream Build
+              </Link>
+              <Link
+                to="/portfolio"
+                className="btn btn-outline text-white border-white hover:bg-white hover:text-neutral-900 text-lg px-8 py-4"
+              >
+                View Our Work
+              </Link>
+            </motion.div>
+          </div>
+        </section>
 
-        {/* Foreground content */}
-        <div className="relative z-20 container mx-auto px-4 md:px-8 h-full flex flex-col justify-center pt-32">
-          <motion.h1 
-            className="text-white text-4xl md:text-5xl lg:text-6xl font-bold max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Custom Homes.<br />
-            Family Values.<br />
-            Builder-Direct.
-          </motion.h1>
-
-          <motion.p 
-            className="text-white text-xl mt-6 max-w-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Over 15 years of hands-on craftsmanship building custom homes, barndominiums, and rural properties across Wichita and beyond.
-          </motion.p>
-
-          <motion.div 
-            className="mt-8 flex flex-wrap gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Link to="/contact" className="btn btn-primary text-lg px-8 py-4">
-              Start Your Dream Build
-            </Link>
-            <Link to="/portfolio" className="btn btn-outline text-white border-white hover:bg-white hover:text-neutral-900 text-lg px-8 py-4">
-              View Our Work
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       {/* About Section */}
       <section className="py-20 bg-neutral-50">
