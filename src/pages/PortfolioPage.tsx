@@ -90,7 +90,7 @@ const PortfolioPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="p-8 bg-white min-h-screen">
+      <div className="p-8 bg-white">
         <div className="mb-6 space-x-3">
           {categories.map((category) => (
             <button
