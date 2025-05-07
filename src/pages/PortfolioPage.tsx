@@ -11,7 +11,7 @@ import portfolioHero from '../images/portfolio_hero.jpg';
 import dirtwork from '../images/dirtwork.jpg';
 import diningRoom from '../images/ternes_dining_room.jpg';
 import kitchen from '../images/ternes_kitchen.jpg';
-import livingroom from '../images/ternes_livingroom.JPG';
+import livingroom from '../images/ternes_livingroom.jpg';
 
 import barnFront from '../images/barn_front.jpg';
 import barnFrame from '../images/barn_frame.jpg';
@@ -24,7 +24,7 @@ import barnInside from '../images/barn_inside.jpg';
 
 import heroHouse from '../images/hero-house.jpg';
 import buildProcess from '../images/build_process_hero.jpg';
-import bar2 from '../images/ternes_bar2.JPG';
+import bar2 from '../images/ternes_bar2.jpg';
 import livingRoom2 from '../images/ternes_living_room.jpg';
 import office from '../images/ternes_office.jpg';
 import shower from '../images/ternes_shower.jpg';
