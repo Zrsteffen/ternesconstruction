@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useInView } from 'react-intersection-observer';
-import ProjectDetail from './services/ProjectDetail'; // ✅ Corrected import
+import ProjectDetail from './ProjectDetail'; // ✅ Corrected import
 
 // ✅ Images
 import portfolioHero from '../images/portfolio_hero.jpg';
