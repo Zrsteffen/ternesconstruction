@@ -1,87 +1,84 @@
 import React, { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
-import { Info } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface ProjectCardProps {
+interface ProjectModalProps {
   project: {
-    id: string;
     title: string;
-    category: string;
-    location: string;
-    date: string;
     images: string[];
     description: string;
+    location: string;
+    date: string;
   };
-  onClick: () => void;
+  onClose: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
-  const [ref, inView] = useInView({ triggerOnce: true });
-  const [index, setIndex] = useState(0);
+const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIndex((prev) => (prev + 1) % project.images.length);
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % project.images.length);
   };
 
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
+  };
+
+  const handleClickOutside = (e: React.MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).id === 'modal-overlay') {
+      onClose();
+    }
   };
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.6 }}
-      className="group relative overflow-hidden rounded-lg shadow-lg bg-white cursor-pointer"
-      onClick={onClick}
+    <div
+      id="modal-overlay"
+      onClick={handleClickOutside}
+      className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center"
     >
-      <div className="relative h-64 overflow-hidden">
-        <img
-          src={project.images[index]}
-          alt={`${project.title} - Image ${index + 1}`}
-          className="w-full h-full object-cover"
-        />
+      <div className="bg-white rounded-lg max-w-5xl w-full relative p-6 shadow-xl">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-500 hover:text-black"
+        >
+          <X size={24} />
+        </button>
 
-        {/* Navigation Arrows */}
-        {project.images.length > 1 && (
-          <>
-            <button
-              onClick={handlePrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/70 text-black px-2 py-1 rounded-r hover:bg-white transition z-10"
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
-            <button
-              onClick={handleNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/70 text-black px-2 py-1 rounded-l hover:bg-white transition z-10"
-              aria-label="Next image"
-            >
-              ›
-            </button>
-          </>
-        )}
+        <h2 className="text-2xl font-bold">{project.title}</h2>
+        <p className="mb-4 text-sm text-gray-600">{project.description}</p>
 
-        {/* Hover Icon */}
-        <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-          <div className="bg-white/90 hover:bg-white text-neutral-900 p-3 rounded-full transition">
-            <Info size={24} />
+        <div className="relative w-full overflow-hidden rounded-lg">
+          <img
+            src={project.images[currentIndex]}
+            alt={`${project.title} Image ${currentIndex + 1}`}
+            className="w-full max-h-[500px] object-cover rounded"
+          />
+          <button
+            onClick={prevImage}
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 p-2 rounded-full"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            onClick={nextImage}
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 p-2 rounded-full"
+          >
+            <ChevronRight />
+          </button>
+        </div>
+
+        <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div>
+            <strong className="block text-gray-800">Location</strong>
+            <span>{project.location}</span>
+          </div>
+          <div>
+            <strong className="block text-gray-800">Completed</strong>
+            <span>{project.date}</span>
           </div>
         </div>
       </div>
-
-      <div className="p-6">
-        <span className="text-sm font-medium text-primary-600">{project.category}</span>
-        <h3 className="text-xl font-bold mt-1">{project.title}</h3>
-        <p className="text-neutral-600 mt-2">{project.location}</p>
-      </div>
-    </motion.div>
+    </div>
   );
 };
 
-export default ProjectCard;
+export default ProjectModal;
