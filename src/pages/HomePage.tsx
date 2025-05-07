@@ -6,88 +6,85 @@ import { ArrowRight } from 'lucide-react';
 
 import SectionTitle from '../components/ui/SectionTitle';
 import CtaButton from '../components/ui/CtaButton';
-import FeaturedProjects from '../components/home/FeaturedProjects';
 import ServicesOverview from '../components/home/ServicesOverview';
 import Testimonials from '../components/home/Testimonials';
 import ContactCta from '../components/home/ContactCta';
 
+// ✅ Updated image imports
 import heroHouse from '../images/hero-house.jpg';
 import aboutUs from '../images/about-us.jpg';
+import modernFarmhouseHero from '../images/portfolio_hero.jpg';
+import barndoHero from '../images/barn_exterior.jpg';
+import ranchHero from '../images/build_process_hero.jpg';
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Your Page Title | Ternes Construction</title>
-        <meta name="description" content="1–2 sentence compelling description focused on the page’s value and keywords." />
+        <title>Home | Ternes Construction</title>
+        <meta name="description" content="Crafting custom homes and barndominiums across Wichita with builder-direct service and family values." />
         <meta name="keywords" content="custom homes, barndominiums, Wichita builders, rural home construction, Ternes Construction" />
-      
-        {/* Open Graph / Facebook */}
-        <meta property="og:title" content="Your Page Title | Ternes Construction" />
-        <meta property="og:description" content="Same compelling description as above, written in natural language." />
+        <meta property="og:title" content="Home | Ternes Construction" />
+        <meta property="og:description" content="Crafting custom homes and barndominiums across Wichita with builder-direct service and family values." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.ternesconstruction.com/your-page-slug" />
-        <meta property="og:image" content="https://www.ternesconstruction.com/images/your-image.jpg" />
-      
-        {/* Optional: Twitter Card */}
+        <meta property="og:url" content="https://www.ternesconstruction.com/" />
+        <meta property="og:image" content={heroHouse} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Your Page Title | Ternes Construction" />
-        <meta name="twitter:description" content="Same compelling description as above." />
-        <meta name="twitter:image" content="https://www.ternesconstruction.com/images/your-image.jpg" />
+        <meta name="twitter:title" content="Home | Ternes Construction" />
+        <meta name="twitter:description" content="Crafting custom homes and barndominiums across Wichita with builder-direct service and family values." />
+        <meta name="twitter:image" content={heroHouse} />
       </Helmet>
 
-
       {/* Hero Section */}
-        <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <img
-              src={heroHouse}
-              alt="Hero custom home exterior"
-              className="w-full h-full object-cover object-center brightness-[0.95]"
-            />
-            <div className="absolute inset-0 bg-black/20 z-10" />
-          </div>
-        
-          <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold max-w-3xl"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              Custom Homes.<br />
-              Family Values.<br />
-              Builder-Direct.
-            </motion.h1>
-        
-            <motion.p
-              className="text-xl text-white/90 mt-6 max-w-2xl"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Over 15 years of hands-on craftsmanship building custom homes, barndominiums, and rural properties across Wichita and beyond.
-            </motion.p>
-        
-            <motion.div
-              className="mt-8 flex flex-wrap gap-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <Link to="/contact" className="btn btn-primary text-lg px-8 py-4">
-                Start Your Dream Build
-              </Link>
-              <Link
-                to="/portfolio"
-                className="btn btn-outline text-white border-white hover:bg-white hover:text-neutral-900 text-lg px-8 py-4"
-              >
-                View Our Work
-              </Link>
-            </motion.div>
-          </div>
-        </section>
+      <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroHouse}
+            alt="Hero custom home exterior"
+            className="w-full h-full object-cover object-center brightness-[0.95]"
+          />
+          <div className="absolute inset-0 bg-black/20 z-10" />
+        </div>
 
+        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
+          <motion.h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold max-w-3xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            Custom Homes.<br />
+            Family Values.<br />
+            Builder-Direct.
+          </motion.h1>
+
+          <motion.p
+            className="text-xl text-white/90 mt-6 max-w-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Over 15 years of hands-on craftsmanship building custom homes, barndominiums, and rural properties across Wichita and beyond.
+          </motion.p>
+
+          <motion.div
+            className="mt-8 flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <Link to="/contact" className="btn btn-primary text-lg px-8 py-4">
+              Start Your Dream Build
+            </Link>
+            <Link
+              to="/portfolio"
+              className="btn btn-outline text-white border-white hover:bg-white hover:text-neutral-900 text-lg px-8 py-4"
+            >
+              View Our Work
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section className="py-20 bg-neutral-50">
@@ -141,7 +138,69 @@ const HomePage: React.FC = () => {
 
       {/* Additional Sections */}
       <ServicesOverview />
-      <FeaturedProjects />
+
+      {/* ✅ Custom Featured Projects section (with direct images if needed) */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <SectionTitle subtitle="Our Recent Work" title="Featured Projects" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            {[
+              {
+                title: 'Modern Farmhouse',
+                category: 'Custom Home',
+                location: 'East Wichita',
+                image: modernFarmhouseHero,
+                link: '/portfolio#modern-farmhouse-2023',
+              },
+              {
+                title: 'Luxury Barndominium',
+                category: 'Barndominium',
+                location: 'Rural Sedgwick County',
+                image: barndoHero,
+                link: '/portfolio#luxury-barndominium-2023',
+              },
+              {
+                title: 'Custom Ranch Home',
+                category: 'Custom Home',
+                location: 'Northwest Wichita',
+                image: ranchHero,
+                link: '/portfolio#rural-build-2023',
+              },
+            ].map((project, idx) => (
+              <Link
+                key={idx}
+                to={project.link}
+                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow group"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6 flex flex-col justify-end">
+                  <span className="text-sm font-semibold text-white bg-primary-600 px-3 py-1 rounded mb-2 w-fit">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                  <p className="text-white/80 text-sm">{project.location}</p>
+                  <span className="mt-4 inline-flex items-center text-white font-medium group-hover:underline">
+                    View Project <ArrowRight size={16} className="ml-1" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              to="/portfolio"
+              className="inline-block px-8 py-3 border border-primary-600 text-primary-600 font-semibold rounded hover:bg-primary-600 hover:text-white transition"
+            >
+              View All Projects
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
       <ContactCta />
     </>
