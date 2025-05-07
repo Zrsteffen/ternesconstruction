@@ -17,6 +17,12 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const images = project.images && project.images.length > 0
+    ? project.images
+    : project.heroImage
+    ? [project.heroImage]
+    : [];
+
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -33,13 +39,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
 
   const goToPreviousImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
   const goToNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -57,47 +63,59 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
           &times;
         </button>
 
+        {project.heroImage && (
+          <img
+            src={project.heroImage}
+            alt="Hero"
+            className="w-full h-64 object-cover rounded-t-lg"
+          />
+        )}
+
         <div className="p-6">
           <h2 className="text-2xl font-bold mb-4">{project.title}</h2>
           <p className="text-gray-700 mb-6">{project.description}</p>
 
-          <div className="relative w-full max-w-3xl mx-auto">
-            <div
-              className={`cursor-pointer overflow-hidden rounded-lg ${
-                isExpanded ? 'fixed top-1/2 left-1/2 z-50 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-screen-xl h-auto bg-white p-6' : ''
-              }`}
-              onClick={() => setIsExpanded(!isExpanded)}
-            >
-              <img
-                src={project.images[currentImageIndex]}
-                alt={`Project image ${currentImageIndex + 1}`}
-                className="w-full h-auto object-contain"
-              />
-            </div>
-
-            {project.images.length > 1 && (
-              <div className="flex justify-between mt-4">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToPreviousImage();
-                  }}
-                  className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
-                >
-                  &#8592; Prev
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToNextImage();
-                  }}
-                  className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
-                >
-                  Next &#8594;
-                </button>
+          {images.length > 0 && (
+            <div className="relative w-full max-w-3xl mx-auto">
+              <div
+                className={`cursor-pointer overflow-hidden rounded-lg ${
+                  isExpanded
+                    ? 'fixed top-1/2 left-1/2 z-50 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-screen-xl h-auto bg-white p-6'
+                    : ''
+                }`}
+                onClick={() => setIsExpanded(!isExpanded)}
+              >
+                <img
+                  src={images[currentImageIndex]}
+                  alt={`Project image ${currentImageIndex + 1}`}
+                  className="w-full h-auto object-contain"
+                />
               </div>
-            )}
-          </div>
+
+              {images.length > 1 && (
+                <div className="flex justify-between mt-4">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToPreviousImage();
+                    }}
+                    className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+                  >
+                    &#8592; Prev
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToNextImage();
+                    }}
+                    className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+                  >
+                    Next &#8594;
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
