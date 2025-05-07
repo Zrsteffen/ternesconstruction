@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useInView } from 'react-intersection-observer';
 import ProjectDetail from './ProjectDetail'; // ✅ Corrected import
 
 // ✅ Images
@@ -79,9 +78,19 @@ const PortfolioPage: React.FC = () => {
         <meta name="twitter:image" content={portfolioHero} />
       </Helmet>
 
-      <div className="p-8 bg-white min-h-screen">
-        <h1 className="text-4xl font-bold mb-6">Project Portfolio</h1>
+      {/* ✅ Hero Section */}
+      <div className="w-full h-64 md:h-96 overflow-hidden relative mb-8">
+        <img
+          src={portfolioHero}
+          alt="Project Portfolio Hero"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <h1 className="text-white text-4xl md:text-6xl font-bold">Project Portfolio</h1>
+        </div>
+      </div>
 
+      <div className="p-8 bg-white min-h-screen">
         <div className="mb-6 space-x-3">
           {categories.map((category) => (
             <button
