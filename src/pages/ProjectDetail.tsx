@@ -12,7 +12,7 @@ interface ProjectDetailProps {
   onClose: () => void;
 }
 
-const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
+const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {AV
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
