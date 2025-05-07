@@ -6,23 +6,29 @@ const testimonials = [
   {
     name: 'Lakyn Cleaver',
     role: 'Custom Home Client',
-    quote: `Jamie and Jordan have been THE BEST to work with on the preliminary details of preparing to break ground. They have made sure that every small detail is absolutely perfect and what we love. My hubby and I can't wait to see what the final project looks like once our dream home is complete!`,
-    stars: 5,
-    avatar: '/images/lakyn.jpg', // Add this if available
+    text: `Jamie and Jordan have been THE BEST to work with on the preliminary details of preparing to break ground. They have made sure that every small detail is absolutely perfect and what we love. My hubby and I can't wait to see what the final project looks like once our dream home is complete!`,
   },
   {
     name: 'Alex Cleaver',
     role: 'Custom Home Client',
-    quote: `Jamie and Jordan have been fantastic to work with! Very detailed and transparent with everything leading up to building our home. No surprises or unknown costs!`,
-    stars: 5,
-    avatar: '/images/alex.jpg', // Add this if available
+    text: `Jamie and Jordan have been fantastic to work with! Very detailed and transparent with everything leading up to building our home. No surprises or unknown costs!`,
   },
   {
     name: 'Bocote Showroom',
     role: 'Vendor Partner',
-    quote: `Working with Ternes Construction has been an absolute pleasure. As a vendor, I've had the opportunity to see firsthand how much they care about their customers and the quality of their work. Their attention to detail, innovative designs, and commitment to craftsmanship truly set them apart.`,
-    stars: 5,
-    avatar: '/images/bocote.jpg', // Add this if available
+    text: `Working with Ternes Construction has been an absolute pleasure. As a vendor, I've had the opportunity to see firsthand how much they care about their customers and the quality of their work. Their attention to detail, innovative designs, and commitment to craftsmanship truly set them apart.
+
+    What stands out most is how well they treat both their clients and partners—communication is seamless, and their professionalism makes every project run smoothly. If you're looking for a home builder that delivers exceptional results with integrity and care, Ternes Construction is the way to go!`,
+  },
+  {
+    name: 'Val Garcia',
+    role: 'Custom Home Client',
+    text: `Ternes Construction has made our first time custom home building a breeze! Knowledgeable, friendly and do everything with integrity.`,
+  },
+  {
+    name: 'Josh Cook',
+    role: 'Custom Home Client',
+    text: `Jamie and Jordan are great people to work with. They are on top of things and take pride in the homes they build. They also keep a clean jobsite so when you want to stop by and check out progress you are not tripping over stuff.`,
   },
 ];
 
@@ -31,39 +37,29 @@ const TestimonialsPage: React.FC = () => {
     <>
       <Helmet>
         <title>Client Testimonials | Ternes Construction</title>
-        <meta
-          name="description"
-          content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder."
-        />
+        <meta name="description" content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder." />
         <meta property="og:title" content="Client Testimonials | Ternes Construction" />
-        <meta
-          property="og:description"
-          content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder."
-        />
-        <meta property="og:image" content={testimonialHero} />
+        <meta property="og:description" content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder." />
+        <meta property="og:image" content="/images/testimonial_hero.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ternesconstruction.com/testimonials" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Client Testimonials | Ternes Construction" />
-        <meta
-          name="twitter:description"
-          content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder."
-        />
-        <meta name="twitter:image" content={testimonialHero} />
+        <meta name="twitter:description" content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder." />
+        <meta name="twitter:image" content="/images/testimonial_hero.jpg" />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-black/50 z-10" />
           <img
             src={testimonialHero}
             alt="Happy clients in front of a Ternes custom home"
-            className="w-full h-full object-cover brightness-75"
+            className="w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/40" />
         </div>
-
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             What Our Clients Say
@@ -74,30 +70,20 @@ const TestimonialsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      {/* Testimonials */}
+      <section className="py-20 bg-neutral-50">
         <div className="container mx-auto px-4">
-          <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={idx}
-                className="bg-neutral-50 p-6 rounded-xl shadow hover:shadow-md transition-all"
-              >
-                <div className="mb-4 text-primary-600 text-3xl">“</div>
-                <p className="text-gray-700 italic mb-4">{testimonial.quote}</p>
-                <div className="flex items-center mt-6">
-                  {testimonial.avatar && (
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
-                    />
-                  )}
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {testimonials.map((t, idx) => (
+              <div key={idx} className="bg-white rounded-lg shadow-md p-6">
+                <div className="mb-3 text-yellow-400 text-lg">
+                  {'★'.repeat(5)}
                 </div>
+                <p className="text-neutral-700 italic mb-6">
+                  {t.text}
+                </p>
+                <div className="text-neutral-800 font-semibold">{t.name}</div>
+                <div className="text-neutral-500 text-sm">{t.role}</div>
               </div>
             ))}
           </div>
