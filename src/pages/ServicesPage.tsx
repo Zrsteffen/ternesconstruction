@@ -24,18 +24,20 @@ const ServicesPage: React.FC = () => {
       </Helmet>
 
       <main className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative scroll-mt-[100px] h-[75vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Responsive Hero Section */}
+        <section className="relative scroll-mt-[100px] min-h-[60vh] md:min-h-[75vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden">
+          {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
               src={servicesHero}
               alt="Custom home under construction"
-              className="w-full h-full object-cover object-top md:object-center"
+              className="w-full h-full object-cover object-center md:object-[50%_30%]"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50" />
           </div>
 
+          {/* Overlay Text */}
           <div className="relative z-10 text-center px-4 pt-24 md:pt-32">
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-md">
               Our Services
@@ -46,7 +48,7 @@ const ServicesPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Service Blocks */}
+        {/* Service Content */}
         <ServicesOverview />
       </main>
     </>
