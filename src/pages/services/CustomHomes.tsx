@@ -70,8 +70,8 @@ const CustomBuildProcess: React.FC = () => {
         />
       </Helmet>
 
-      {/* Hero Section */}
-      <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+      {/* ✅ Fixed Hero Section */}
+      <section className="relative pt-28 md:pt-32 h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={buildProcessHero}
@@ -97,7 +97,7 @@ const CustomBuildProcess: React.FC = () => {
         </div>
       </section>
 
-      {/* Process Steps */}
+      {/* Process Steps Section */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto mb-12 text-center">
