@@ -68,7 +68,7 @@ const TestimonialsPage: React.FC = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative h-[60vh] overflow-hidden text-white">
+      <section className="relative pt-28 md:pt-32 h-[75vh] overflow-hidden text-white">
         <div className="absolute inset-0 z-0">
           <img
             src={testimonialHero}
