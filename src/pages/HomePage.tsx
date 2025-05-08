@@ -13,7 +13,7 @@ import ContactCta from '../components/home/ContactCta';
 import heroHouse from '../images/hero-house.jpg';
 import aboutUs from '../images/about-us.jpg';
 import modernFarmhouseHero from '../images/portfolio_hero.jpg';
-import barndoHero from '../images/barn_exterior.jpg';
+import barndoHero from '../images/barn_hero.jpg';
 import ranchHero from '../images/build_process_hero.jpg';
 
 const HomePage: React.FC = () => {
