@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import ProjectDetail from './ProjectDetail';
 
-// ✅ Images
 import portfolioHero from '../images/portfolio_hero.jpg';
 import dirtwork from '../images/dirtwork.jpg';
 import diningRoom from '../images/ternes_dining_room.jpg';
@@ -71,17 +70,20 @@ const PortfolioPage: React.FC = () => {
         <meta name="twitter:image" content={portfolioHero} />
       </Helmet>
 
-      {/* Hero */}
-      <div className="w-full h-64 md:h-96 overflow-hidden relative mb-8">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         <img
           src={portfolioHero}
           alt="Project Portfolio Hero"
-          className="w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <h1 className="text-white text-4xl md:text-6xl font-bold">Project Portfolio</h1>
+        <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
+        <div className="relative z-20 flex items-center justify-center h-full text-center px-4 pt-24 md:pt-32">
+          <h1 className="text-white text-4xl md:text-6xl font-bold drop-shadow-lg">
+            Project Portfolio
+          </h1>
         </div>
-      </div>
+      </section>
 
       {/* Project Grid */}
       <div className="p-8 bg-white">
