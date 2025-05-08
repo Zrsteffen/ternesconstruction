@@ -67,8 +67,8 @@ const TestimonialsPage: React.FC = () => {
         <meta name="twitter:image" content="/images/testimonial_hero.jpg" />
       </Helmet>
 
-      {/* Hero */}
-      <section className="relative pt-28 md:pt-32 h-[75vh] overflow-hidden text-white">
+      {/* Hero Section */}
+      <section className="relative pt-28 md:pt-32 h-[75vh] md:h-[85vh] overflow-hidden text-white">
         <div className="absolute inset-0 z-0">
           <img
             src={testimonialHero}
@@ -77,11 +77,13 @@ const TestimonialsPage: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="relative z-10 container mx-auto px-4 flex flex-col justify-center items-center h-full text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">What Our Clients Say</h1>
-          <p className="text-xl text-white/90 max-w-2xl">
-            Trusted by families across Kansas to build their dream homes.
-          </p>
+        <div className="relative z-10 container mx-auto px-4 flex items-center justify-center h-full text-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">What Our Clients Say</h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Trusted by families across Kansas to build their dream homes.
+            </p>
+          </div>
         </div>
       </section>
 
