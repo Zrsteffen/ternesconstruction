@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
@@ -34,7 +35,7 @@ const HomePage: React.FC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative pt-28 md:pt-32 h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+      <section className="relative pt-28 md:pt-32 min-h-[100vh] bg-neutral-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={heroHouse}
@@ -43,7 +44,7 @@ const HomePage: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/20 z-10" />
         </div>
-        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
+        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center">
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
