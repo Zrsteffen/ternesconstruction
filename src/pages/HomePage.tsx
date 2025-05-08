@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 import SectionTitle from '../components/ui/SectionTitle';
 import ServicesOverview from '../components/home/ServicesOverview';
-import Testimonials from '../components/home/Testimonials';
+import Testimonials from '../components/home/Testimonials'; // ✅ Uses Swiper carousel now
 import ContactCta from '../components/home/ContactCta';
 
 import heroHouse from '../images/hero-house.jpg';
@@ -85,29 +85,25 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4 md:px-8">
           <SectionTitle subtitle="Our Recent Work" title="Featured Projects" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {[
-              {
-                title: 'Modern Farmhouse',
-                category: 'Custom Home',
-                location: 'East Wichita',
-                image: modernFarmhouseHero,
-                link: '/portfolio#modern-farmhouse-2023',
-              },
-              {
-                title: 'Luxury Barndominium',
-                category: 'Barndominium',
-                location: 'Rural Sedgwick County',
-                image: barndoHero,
-                link: '/portfolio#luxury-barndominium-2023',
-              },
-              {
-                title: 'Custom Ranch Home',
-                category: 'Custom Home',
-                location: 'Northwest Wichita',
-                image: ranchHero,
-                link: '/portfolio#rural-build-2023',
-              },
-            ].map((project, idx) => (
+            {[{
+              title: 'Modern Farmhouse',
+              category: 'Custom Home',
+              location: 'East Wichita',
+              image: modernFarmhouseHero,
+              link: '/portfolio#modern-farmhouse-2023',
+            }, {
+              title: 'Luxury Barndominium',
+              category: 'Barndominium',
+              location: 'Rural Sedgwick County',
+              image: barndoHero,
+              link: '/portfolio#luxury-barndominium-2023',
+            }, {
+              title: 'Custom Ranch Home',
+              category: 'Custom Home',
+              location: 'Northwest Wichita',
+              image: ranchHero,
+              link: '/portfolio#rural-build-2023',
+            }].map((project, idx) => (
               <Link key={idx} to={project.link} className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow group">
                 <img src={project.image} alt={project.title} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-6 flex flex-col justify-end">
