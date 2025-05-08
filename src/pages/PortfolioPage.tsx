@@ -3,10 +3,25 @@ import { Helmet } from 'react-helmet-async';
 import ProjectDetail from './ProjectDetail';
 
 import portfolioHero from '../images/portfolio_hero.jpg';
-import dirtwork from '../images/dirtwork.jpg';
+
+// Fully Custom Home
+import bar2 from '../images/ternes_bar2.jpg';
 import diningRoom from '../images/ternes_dining_room.jpg';
+import bar3 from '../images/ternes_bar3.jpg';
+import island from '../images/custom_island.jpg';
+import art from '../images/ternes_art.jpg';
+import landscaping from '../images/custome_landscaping.jpg';
 import kitchen from '../images/ternes_kitchen.jpg';
 import livingroom from '../images/ternes_livingroom.jpg';
+import masterBath from '../images/custom_master_bath.jpg';
+import countertop from '../images/custom_countertop.jpg';
+import lighting from '../images/custom_lighting.jpg';
+import stairs from '../images/custom_stairs.jpg';
+import customKitchen from '../images/custom_kitchen.jpg';
+import kitchen1 from '../images/ternes_kitchen(1).jpg';
+
+// Barndominium
+import barnCover from '../images/barn_exterior.jpg';
 import barnFront from '../images/barn_front.jpg';
 import barnFrame from '../images/barn_frame.jpg';
 import barnExterior from '../images/barn_exterior.jpg';
@@ -15,21 +30,31 @@ import barnUpstairs from '../images/barn_upstair.jpg';
 import barnLiving from '../images/barn_living.jpg';
 import barnInterior from '../images/barn_interrior.jpg';
 import barnInside from '../images/barn_inside.jpg';
+import barnMetalFront from '../images/barn_metal_front.jpg';
+
+// Rural Build
+import ruralCover from '../images/rural_hero.jpg';
+import dirtwork from '../images/dirtwork.jpg';
 import buildProcess from '../images/build_process_hero.jpg';
-import bar2 from '../images/ternes_bar2.jpg';
-import livingRoom2 from '../images/ternes_living_room.jpg';
 import office from '../images/ternes_office.jpg';
 import shower from '../images/ternes_shower.jpg';
+import ruralBoxIn from '../images/rural_home_box_in.jpg';
+import framing from '../images/framing_rural.jpg';
+import driveway from '../images/rural_home_driveway.jpg';
 
 const projects = [
   {
-    id: 'modern-farmhouse-2023',
-    title: 'Modern Farmhouse',
+    id: 'fully-custom-home',
+    title: 'Fully Custom Home',
     category: 'Custom Homes',
     location: 'East Wichita',
     date: '2023',
-    images: [dirtwork, diningRoom, kitchen, livingroom],
-    description: 'Contemporary farmhouse featuring open concept living spaces and custom finishes.',
+    images: [
+      bar2, diningRoom, bar3, island, bar2, art, landscaping,
+      kitchen, livingroom, masterBath, countertop, lighting, stairs, customKitchen, kitchen1,
+    ],
+    description: 'Custom-built home in Wichita featuring bespoke kitchen design, curated finishes, and premium amenities.',
+    cover: bar2,
   },
   {
     id: 'luxury-barndominium-2023',
@@ -37,8 +62,12 @@ const projects = [
     category: 'Barndominiums',
     location: 'Rural Sedgwick County',
     date: '2023',
-    images: [barnFront, barnFrame, barnExterior, yoderKitchen, barnUpstairs, barnLiving, barnInterior, barnInside],
-    description: 'Modern barndominium with high-end finishes and attached workshop.',
+    images: [
+      barnCover, barnFront, barnFrame, barnExterior, yoderKitchen,
+      barnUpstairs, barnLiving, barnInterior, barnInside, barnMetalFront,
+    ],
+    description: 'Modern luxury barndominium in Sedgwick County built with metal siding and shop-house layout.',
+    cover: barnCover,
   },
   {
     id: 'rural-build-2023',
@@ -46,9 +75,13 @@ const projects = [
     category: 'Rural Builds',
     location: 'West Wichita',
     date: '2023',
-    images: [buildProcess, bar2, kitchen, livingRoom2, office, shower],
-    description: 'Complete custom build on rural property with specialized features.',
-  }
+    images: [
+      ruralCover, dirtwork, buildProcess, office, shower,
+      ruralBoxIn, framing, driveway,
+    ],
+    description: 'Rural residential construction outside Wichita with full site development and custom finish selections.',
+    cover: ruralCover,
+  },
 ];
 
 const PortfolioPage: React.FC = () => {
@@ -74,7 +107,7 @@ const PortfolioPage: React.FC = () => {
       <section className="relative h-[60vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         <img
           src={portfolioHero}
-          alt="Project Portfolio Hero"
+          alt="Wichita custom home portfolio hero image"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
         <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
@@ -94,7 +127,11 @@ const PortfolioPage: React.FC = () => {
               className="cursor-pointer border rounded overflow-hidden shadow hover:shadow-lg transition"
               onClick={() => setSelectedProject(project)}
             >
-              <img src={project.images[0]} alt={project.title} className="w-full h-64 object-cover" />
+              <img
+                src={project.cover}
+                alt={`Preview of ${project.title} project in ${project.location}`}
+                className="w-full h-64 object-cover"
+              />
               <div className="p-4">
                 <h2 className="text-xl font-semibold">{project.title}</h2>
                 <p className="text-sm text-gray-500">{project.location} · {project.date}</p>
