@@ -137,7 +137,7 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
             {[
               {
-                title: 'Modern Farmhouse',
+                title: 'Fully Customized Home',
                 category: 'Custom Home',
                 location: 'East Wichita',
                 image: modernFarmhouseHero,
