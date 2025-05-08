@@ -30,7 +30,6 @@ import barnUpstairs from '../images/barn_upstair.jpg';
 import barnLiving from '../images/barn_living.jpg';
 import barnInterior from '../images/barn_interrior.jpg';
 import barnInside from '../images/barn_inside.jpg';
-import barnMetalFront from '../images/barn_metal_front.jpg';
 
 // Rural Build
 import ruralCover from '../images/rural_hero.jpg';
@@ -64,7 +63,7 @@ const projects = [
     date: '2023',
     images: [
       barnCover, barnFront, barnFrame, barnExterior, yoderKitchen,
-      barnUpstairs, barnLiving, barnInterior, barnInside, barnMetalFront,
+      barnUpstairs, barnLiving, barnInterior, barnInside,
     ],
     description: 'Modern luxury barndominium in Sedgwick County built with metal siding and shop-house layout.',
     cover: barnCover,
