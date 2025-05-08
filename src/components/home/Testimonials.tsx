@@ -1,125 +1,60 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
-import SectionTitle from '../ui/SectionTitle';
-
-// Import Swiper React components and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+const testimonials = [
+  {
+    name: 'John Doe',
+    review: 'Ternes Construction built our dream home with exceptional quality and attention to detail.',
+  },
+  {
+    name: 'Jane Smith',
+    review: 'The team was professional, timely, and exceeded our expectations at every turn.',
+  },
+  // Add more testimonials as needed
+];
 
 const Testimonials: React.FC = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Lakyn Cleaver',
-      role: 'Custom Home Client',
-      quote: "Jamie and Jordan have been THE BEST to work with on the preliminary details of preparing to break ground. They have made sure that every small detail is absolutely perfect and what we love. My hubby and I can't wait to see what the final project looks like once our dream home is complete!",
-      rating: 5,
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg'
-    },
-    {
-      id: 2,
-      name: 'Alex Cleaver',
-      role: 'Custom Home Client',
-      quote: "Jamie and Jordan have been fantastic to work with! Very detailed and transparent with everything leading up to building our home. No surprises or unknown costs!",
-      rating: 5,
-      image: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg'
-    },
-    {
-      id: 3,
-      name: 'Bocote Showroom',
-      role: 'Vendor Partner',
-      quote: "Working with Ternes Construction has been an absolute pleasure. As a vendor, I've had the opportunity to see firsthand how much they care about their customers and the quality of their work. Their attention to detail, innovative designs, and commitment to craftsmanship truly set them apart.",
-      rating: 5,
-      image: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg'
-    },
-    {
-      id: 4,
-      name: 'Val Garcia',
-      role: 'Custom Home Owner',
-      quote: "Ternes Construction has made our first time custom home building a breeze! Knowledgeable, friendly and do everything with integrity.",
-      rating: 5,
-      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg'
-    },
-    {
-      id: 5,
-      name: 'Josh Cook',
-      role: 'Custom Home Client',
-      quote: "Jamie and Jordan are great people to work with. They are on top of things and take pride in the homes they build. They also keep a clean jobsite so when you want to stop by and check out progress you are not tripping over stuff.",
-      rating: 5,
-      image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg'
-    }
-  ];
-
   return (
-    <section className="py-20 bg-primary-700 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10 bg-grain-pattern"></div>
-      
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <SectionTitle 
-          title="What Our Clients Say" 
-          subtitle="Testimonials"
-          center
-          light
-        />
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+    <section className="py-20 bg-neutral-100">
+      <div className="container mx-auto px-4 md:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">What Our Clients Say</h2>
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation
+          autoplay={{ delay: 5000 }}
+          loop
+          spaceBetween={30}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
         >
-          <Swiper
-            modules={[Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000 }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-            className="testimonial-swiper py-8"
-          >
-            {testimonials.map((testimonial) => (
-              <SwiperSlide key={testimonial.id}>
-                <div className="bg-white text-neutral-800 p-8 rounded-lg shadow-lg h-full flex flex-col">
-                  <Quote size={36} className="text-primary-300 mb-4" />
-                  
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, index) => (
-                      <Star key={index} size={18} fill="#FBBF24" stroke="none" />
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white p-6 rounded-lg shadow-md h-full flex flex-col">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-500">
+                    {[...Array(5)].map((_, i) => (
+                      <svg
+                        key={i}
+                        className="w-5 h-5 fill-current"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
+                      </svg>
                     ))}
                   </div>
-                  
-                  <p className="italic text-neutral-700 mb-6 flex-grow">{testimonial.quote}</p>
-                  
-                  <div className="flex items-center mt-4">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name} 
-                      className="w-12 h-12 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <h4 className="font-bold">{testimonial.name}</h4>
-                      <p className="text-sm text-neutral-500">{testimonial.role}</p>
-                    </div>
-                  </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+                <p className="text-neutral-700 mb-4 flex-grow">"{testimonial.review}"</p>
+                <p className="text-neutral-900 font-semibold mt-4">{testimonial.name}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
