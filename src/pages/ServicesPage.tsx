@@ -16,7 +16,7 @@ const ServicesPage: React.FC = () => {
 
       <main className="min-h-screen">
         {/* Hero Section with Background Image */}
-        <section className="relative min-h-[60vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center">
+        <section className="relative pt-28 md:pt-32 h-[75vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
