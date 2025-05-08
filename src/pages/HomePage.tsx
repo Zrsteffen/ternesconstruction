@@ -44,7 +44,8 @@ const HomePage: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/20 z-10" />
         </div>
-        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center">
+        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full pt-24 md:pt-32">
+
           <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
