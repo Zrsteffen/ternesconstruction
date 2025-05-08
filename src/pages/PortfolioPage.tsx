@@ -10,7 +10,7 @@ import diningRoom from '../images/ternes_dining_room.jpg';
 import bar3 from '../images/ternes_bar3.jpg';
 import island from '../images/custom_island.jpg';
 import art from '../images/ternes_art.jpg';
-import landscaping from '../images/custome_landscaping.jpg';
+import landscaping from '../images/custom_landscaping.jpg';
 import kitchen from '../images/ternes_kitchen.jpg';
 import livingroom from '../images/ternes_livingroom.jpg';
 import masterBath from '../images/custom_master_bath.jpg';
