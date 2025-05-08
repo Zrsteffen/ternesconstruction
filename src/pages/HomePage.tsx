@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+      <section className="relative pt-28 md:pt-32 h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={heroHouse}
