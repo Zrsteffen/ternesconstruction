@@ -67,7 +67,7 @@ const AboutPage: React.FC = () => {
       </Helmet>
 
       {/* Hero Image Section */}
-      <section className="relative pt-28 md:pt-32 h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
+      <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={aboutUs}
@@ -77,8 +77,8 @@ const AboutPage: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/20 z-10" />
         </div>
-
-        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full">
+      
+        <div className="container mx-auto px-4 md:px-8 relative z-20 flex flex-col justify-center h-full pt-24 md:pt-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,6 +94,7 @@ const AboutPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
 
       <section className="py-20 bg-neutral-50">
         <div className="container mx-auto px-4 md:px-8 text-center">
