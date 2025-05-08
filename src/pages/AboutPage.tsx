@@ -72,9 +72,10 @@ const AboutPage: React.FC = () => {
           <img
             src={aboutUs}
             alt="Ternes Construction About Us Hero"
-            className="w-full h-full object-cover object-center brightness-[0.95]"
+            className="w-full h-full object-cover object-top md:object-center brightness-[0.95]"
             loading="lazy"
           />
+
           <div className="absolute inset-0 bg-black/20 z-10" />
         </div>
       
