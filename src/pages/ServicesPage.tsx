@@ -16,7 +16,7 @@ const ServicesPage: React.FC = () => {
 
       <main className="min-h-screen">
         {/* Hero Section with Background Image */}
-        <section className="relative pt-28 md:pt-32 h-[75vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center">
+        <section className="relative h-[75vh] md:min-h-[80vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
@@ -24,11 +24,11 @@ const ServicesPage: React.FC = () => {
               alt="Custom home under construction"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-50" />
           </div>
 
           {/* Overlay Text */}
-          <div className="relative z-10 text-center px-4">
+          <div className="relative z-10 text-center px-4 pt-24 md:pt-32">
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-md">
               Our Services
             </h1>
