@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface Project {
   id: number;
@@ -16,37 +18,37 @@ interface ProjectDetailProps {
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
-  const images = project.images && project.images.length > 0
-    ? project.images
-    : project.heroImage
-    ? [project.heroImage]
-    : [];
+  const images = project.images?.length ? project.images : project.heroImage ? [project.heroImage] : [];
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+        navigate('/portfolio');
+      }
     };
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
-  }, [onClose]);
+  }, [onClose, navigate]);
 
   const handleClickOutside = (e: React.MouseEvent<HTMLDivElement>) => {
     if ((e.target as HTMLElement).id === 'modal-background') {
       onClose();
+      navigate('/portfolio');
     }
   };
 
-  const goToPreviousImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  const goToPreviousImage = () =>
+    setCurrentImageIndex((i) => (i === 0 ? images.length - 1 : i - 1));
 
-  const goToNextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+  const goToNextImage = () =>
+    setCurrentImageIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+
+  const generateAltText = (src: string) => {
+    const name = src.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? '';
+    return `Wichita custom home photo: ${name.replace(/[-_]/g, ' ')}`;
   };
 
   return (
@@ -55,9 +57,30 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
       onClick={handleClickOutside}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
     >
+      <Helmet>
+        <link rel="preload" as="image" href={project.heroImage} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'VisualArtwork',
+            name: project.title,
+            image: images,
+            creator: {
+              '@type': 'Organization',
+              name: 'Ternes Construction'
+            },
+            description: project.description,
+            url: window.location.href
+          })}
+        </script>
+      </Helmet>
+
       <div className="bg-white rounded-lg shadow-lg max-w-4xl w-full max-h-[90vh] overflow-auto relative">
         <button
-          onClick={onClose}
+          onClick={() => {
+            onClose();
+            navigate('/portfolio');
+          }}
           className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl"
         >
           &times;
@@ -66,7 +89,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
         {project.heroImage && (
           <img
             src={project.heroImage}
-            alt="Hero"
+            alt={`Wichita custom home feature: ${project.title}`}
             className="w-full h-64 object-cover rounded-t-lg"
           />
         )}
@@ -87,7 +110,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
               >
                 <img
                   src={images[currentImageIndex]}
-                  alt={`Project image ${currentImageIndex + 1}`}
+                  alt={generateAltText(images[currentImageIndex])}
                   className="w-full h-auto object-contain"
                 />
               </div>
