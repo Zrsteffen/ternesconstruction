@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 import SectionTitle from '../components/ui/SectionTitle';
 import ServicesOverview from '../components/home/ServicesOverview';
-import Testimonials from '../components/home/Testimonials'; // ✅ Uses Swiper carousel now
+import Testimonials from '../components/home/Testimonials';
 import ContactCta from '../components/home/ContactCta';
 
 import heroHouse from '../images/hero-house.jpg';
@@ -66,9 +66,15 @@ const HomePage: React.FC = () => {
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
             <span className="text-primary-600 font-medium uppercase tracking-wider">About Ternes Construction</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">A Family-Owned Builder You Can Trust</h2>
-            <p className="text-neutral-700 mb-6">At Ternes Construction, we're not just builders – we're your neighbors. Our family-owned business brings decades of craftsmanship with a personal touch that bigger companies can't match.</p>
-            <p className="text-neutral-700 mb-6">Jamie and Jordan Ternes work directly with every client, ensuring clear communication, transparent pricing, and a building process that respects your vision and budget. No shortcuts. Just honest work.</p>
-            <blockquote className="border-l-4 border-primary-600 pl-4 italic text-neutral-600 my-6">"We treat every home like we're building it for our own family."</blockquote>
+            <p className="text-neutral-700 mb-6">
+              At Ternes Construction, we're not just builders – we're your neighbors. Our family-owned business brings decades of craftsmanship with a personal touch that bigger companies can't match.
+            </p>
+            <p className="text-neutral-700 mb-6">
+              Jamie and Jordan Ternes work directly with every client, ensuring clear communication, transparent pricing, and a building process that respects your vision and budget. No shortcuts. Just honest work.
+            </p>
+            <blockquote className="border-l-4 border-primary-600 pl-4 italic text-neutral-600 my-6">
+              "We treat every home like we're building it for our own family."
+            </blockquote>
             <div className="mt-8">
               <Link to="/about" className="flex items-center text-primary-600 font-medium hover:text-primary-700 transition-colors group">
                 Learn more about our story <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
@@ -125,7 +131,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <Testimonials />
+      <Testimonials /> {/* ✅ Carousel without photos, just text/stars */}
       <ContactCta />
     </>
   );
