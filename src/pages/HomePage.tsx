@@ -21,4 +21,5 @@ const HomePage: React.FC = () => {
       <Helmet>
         <title>Home | Ternes Construction</title>
         <meta name="description" content="Crafting custom homes and barndominiums across Wichita with builder-direct service and family values." />
-        <meta name="keywords">
+        <meta name="keywords" content="custom homes, barndominiums, Wichita builders, rural home construction, Ternes Construction" />
+
