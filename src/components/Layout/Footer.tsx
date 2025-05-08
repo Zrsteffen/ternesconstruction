@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="mailto:info@ternesconstruction.com" 
+                href="mailto:TernesConstructionLLC@gmail.com" 
                 className="text-neutral-500 hover:text-primary-600 transition-colors"
                 aria-label="Email"
               >
