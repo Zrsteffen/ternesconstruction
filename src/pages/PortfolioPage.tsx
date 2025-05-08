@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import ProjectDetail from './ProjectDetail'; // ✅ Corrected import
+import ProjectDetail from './ProjectDetail';
 
 // ✅ Images
 import portfolioHero from '../images/portfolio_hero.jpg';
@@ -52,15 +52,8 @@ const projects = [
   }
 ];
 
-const categories = ['All', 'Custom Homes', 'Barndominiums', 'Rural Builds'];
-
 const PortfolioPage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-
-  const filteredProjects = selectedCategory === 'All'
-    ? projects
-    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <>
@@ -78,7 +71,7 @@ const PortfolioPage: React.FC = () => {
         <meta name="twitter:image" content={portfolioHero} />
       </Helmet>
 
-      {/* ✅ Hero Section */}
+      {/* Hero */}
       <div className="w-full h-64 md:h-96 overflow-hidden relative mb-8">
         <img
           src={portfolioHero}
@@ -90,23 +83,10 @@ const PortfolioPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Project Grid */}
       <div className="p-8 bg-white">
-        <div className="mb-6 space-x-3">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`px-4 py-2 rounded border ${
-                selectedCategory === category ? 'bg-black text-white' : 'bg-gray-200'
-              }`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className="cursor-pointer border rounded overflow-hidden shadow hover:shadow-lg transition"
