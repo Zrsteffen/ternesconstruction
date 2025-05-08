@@ -151,7 +151,7 @@ const HomePage: React.FC = () => {
                 link: '/portfolio#luxury-barndominium-2023',
               },
               {
-                title: 'Custom Ranch Home',
+                title: 'Custom Rural Home',
                 category: 'Custom Home',
                 location: 'Northwest Wichita',
                 image: ranchHero,
