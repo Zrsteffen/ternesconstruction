@@ -21,7 +21,7 @@ import customKitchen from '../images/custom_kitchen.jpg';
 import kitchen1 from '../images/ternes_kitchen(1).jpg';
 
 // Barndominium
-import barnCover from '../images/barn_exterior.jpg';
+import barnCover from '../images/barn_hero.jpg';
 import barnFront from '../images/barn_front.jpg';
 import barnFrame from '../images/barn_frame.jpg';
 import barnExterior from '../images/barn_exterior.jpg';
@@ -32,7 +32,7 @@ import barnInterior from '../images/barn_interrior.jpg';
 import barnInside from '../images/barn_inside.jpg';
 
 // Rural Build
-import ruralCover from '../images/rural_hero.jpg';
+import ruralCover from '../images/hero-house.jpg';
 import dirtwork from '../images/dirtwork.jpg';
 import buildProcess from '../images/build_process_hero.jpg';
 import office from '../images/ternes_office.jpg';
@@ -53,7 +53,7 @@ const projects = [
       kitchen, livingroom, masterBath, countertop, lighting, stairs, customKitchen, kitchen1,
     ],
     description: 'Custom-built home in Wichita featuring bespoke kitchen design, curated finishes, and premium amenities.',
-    cover: bar2,
+    cover: landscaping,
   },
   {
     id: 'luxury-barndominium-2023',
