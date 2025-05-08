@@ -1,12 +1,14 @@
+// src/components/home/Testimonials.tsx
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import testimonialHero from '../images/testimonial_hero.jpg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
-const testimonials = [
+const reviews = [
   {
     name: 'Lakyn Cleaver',
     role: 'Custom Home Client',
-    text: `Jamie and Jordan have been THE BEST to work with on the preliminary details of preparing to break ground. They have made sure that every small detail is absolutely perfect and what we love. My hubby and I can't wait to see what the final project looks like once our dream home is complete!`,
+    text: `Jamie and Jordan have been THE BEST to work with on the preliminary details of preparing to break ground. Every small detail is absolutely perfect and what we love. My hubby and I can’t wait to see what the final project looks like once our dream home is complete!`,
   },
   {
     name: 'Alex Cleaver',
@@ -16,9 +18,7 @@ const testimonials = [
   {
     name: 'Bocote Showroom',
     role: 'Vendor Partner',
-    text: `Working with Ternes Construction has been an absolute pleasure. As a vendor, I've had the opportunity to see firsthand how much they care about their customers and the quality of their work. Their attention to detail, innovative designs, and commitment to craftsmanship truly set them apart.
-
-    What stands out most is how well they treat both their clients and partners—communication is seamless, and their professionalism makes every project run smoothly. If you're looking for a home builder that delivers exceptional results with integrity and care, Ternes Construction is the way to go!`,
+    text: `As a vendor, I’ve seen firsthand how much they care about customers and quality. Their attention to detail, innovative designs, and commitment to craftsmanship set them apart. Professional, seamless communication.`,
   },
   {
     name: 'Val Garcia',
@@ -28,69 +28,44 @@ const testimonials = [
   {
     name: 'Josh Cook',
     role: 'Custom Home Client',
-    text: `Jamie and Jordan are great people to work with. They are on top of things and take pride in the homes they build. They also keep a clean jobsite so when you want to stop by and check out progress you are not tripping over stuff.`,
+    text: `Jamie and Jordan are great to work with. They take pride in the homes they build and keep a clean jobsite for client visits.`,
   },
 ];
 
-const TestimonialsPage: React.FC = () => {
+const Testimonials: React.FC = () => {
   return (
-    <>
-      <Helmet>
-        <title>Client Testimonials | Ternes Construction</title>
-        <meta name="description" content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder." />
-        <meta property="og:title" content="Client Testimonials | Ternes Construction" />
-        <meta property="og:description" content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder." />
-        <meta property="og:image" content="/images/testimonial_hero.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ternesconstruction.com/testimonials" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Client Testimonials | Ternes Construction" />
-        <meta name="twitter:description" content="Hear from real clients about their experience working with Ternes Construction, Wichita’s trusted family-owned builder." />
-        <meta name="twitter:image" content="/images/testimonial_hero.jpg" />
-      </Helmet>
-
-      {/* Hero */}
-      <section className="relative h-[60vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-black/50 z-10" />
-          <img
-            src={testimonialHero}
-            alt="Happy clients in front of a Ternes custom home"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            What Our Clients Say
-          </h1>
-          <p className="text-xl text-white/90 max-w-2xl">
-            Trusted by families across Kansas to build their dream homes.
-          </p>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-neutral-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-white rounded-lg shadow-md p-6">
-                <div className="mb-3 text-yellow-400 text-lg">
-                  {'★'.repeat(5)}
+    <section className="py-20 bg-primary-700 text-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-10">What Our Clients Say</h2>
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {reviews.map((review, idx) => (
+            <SwiperSlide key={idx}>
+              <div className="bg-white text-neutral-800 rounded-lg shadow-lg p-6 h-full flex flex-col justify-between">
+                <div>
+                  <div className="text-yellow-400 text-xl mb-2">★★★★★</div>
+                  <p className="text-sm italic">{review.text}</p>
                 </div>
-                <p className="text-neutral-700 italic mb-6">
-                  {t.text}
-                </p>
-                <div className="text-neutral-800 font-semibold">{t.name}</div>
-                <div className="text-neutral-500 text-sm">{t.role}</div>
+                <div className="mt-6">
+                  <p className="font-bold">{review.name}</p>
+                  <p className="text-xs text-neutral-500">{review.role}</p>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
   );
 };
 
-export default TestimonialsPage;
+export default Testimonials;
