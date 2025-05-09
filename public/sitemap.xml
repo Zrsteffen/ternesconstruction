@@ -8,16 +8,46 @@
   <url>
     <loc>https://www.ternesconstruction.com/about</loc>
     <lastmod>2025-05-09</lastmod>
-    <priority>0.80</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.ternesconstruction.com/portfolio</loc>
     <lastmod>2025-05-09</lastmod>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.ternesconstruction.com/services</loc>
+    <lastmod>2025-05-09</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.ternesconstruction.com/contact</loc>
     <lastmod>2025-05-09</lastmod>
-    <priority>0.64</priority>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.ternesconstruction.com/projects/barns</loc>
+    <lastmod>2025-05-09</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.ternesconstruction.com/projects/barndominiums</loc>
+    <lastmod>2025-05-09</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.ternesconstruction.com/projects/homes</loc>
+    <lastmod>2025-05-09</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.ternesconstruction.com/projects/hangars</loc>
+    <lastmod>2025-05-09</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.ternesconstruction.com/testimonials</loc>
+    <lastmod>2025-05-09</lastmod>
+    <priority>0.70</priority>
   </url>
 </urlset>
