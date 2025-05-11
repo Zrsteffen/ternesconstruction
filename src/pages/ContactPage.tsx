@@ -180,7 +180,7 @@ const ContactPage = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <h3 className="text-lg font-medium text-gray-900">Email</h3>
-              <p className="mt-2 text-gray-600">info@ternesconstruction.com</p>
+              <p className="mt-2 text-gray-600">TernesConstructionLLC@gmail.com</p>
             </div>
             <div className="text-center">
               <h3 className="text-lg font-medium text-gray-900">Phone</h3>
