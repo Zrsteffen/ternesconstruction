@@ -49,6 +49,9 @@ const AboutPage: React.FC = () => {
         <meta name="twitter:title" content="About Us | Ternes Construction" />
         <meta name="twitter:description" content="Meet Jamie and Jordan Ternes — builder-direct custom home experts in Wichita, KS." />
         <meta name="twitter:image" content="https://www.ternesconstruction.com/images/about-us.jpg" />
+      
+        <link rel="canonical" href="https://www.ternesconstruction.com/about" />
+      
         <script type="application/ld+json">
           {`
             {
@@ -65,6 +68,7 @@ const AboutPage: React.FC = () => {
           `}
         </script>
       </Helmet>
+
 
       {/* Hero Image Section */}
       <section className="relative h-[75vh] md:h-[90vh] bg-neutral-900 text-white overflow-hidden">
