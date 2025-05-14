@@ -21,6 +21,7 @@ const ServicesPage: React.FC = () => {
         <meta name="twitter:title" content="Our Services | Custom Home Builder" />
         <meta name="twitter:description" content="Explore our comprehensive construction services including custom homes, barndominiums, rural builds, and home additions." />
         <meta name="twitter:image" content="https://www.ternesconstruction.com/images/services_hero.jpg" />
+        <link rel="canonical" href="https://www.ternesconstruction.com/services" />
       </Helmet>
 
       <main className="min-h-screen">
