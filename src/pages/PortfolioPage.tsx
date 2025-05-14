@@ -100,6 +100,7 @@ const PortfolioPage: React.FC = () => {
         <meta name="twitter:title" content="Project Portfolio | Ternes Construction" />
         <meta name="twitter:description" content="See our latest completed custom homes and barndominiums." />
         <meta name="twitter:image" content={portfolioHero} />
+        <link rel="canonical" href="https://www.ternesconstruction.com/portfolio" />
       </Helmet>
 
       {/* Hero Section */}
