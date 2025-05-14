@@ -7,7 +7,7 @@ const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '', // ✅ Added phone
+    phone: '',
     subject: '',
     message: ''
   });
@@ -23,13 +23,11 @@ const ContactPage = () => {
     e.preventDefault();
     setStatus('idle');
     try {
-      const response = await fetch('https://zrsteffen.app.n8n.cloud/webhook/contact-form-webhook',
-
+      const response = await fetch(
+        'https://zrsteffen.app.n8n.cloud/webhook/contact-form-webhook',
         {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData).toString()
         }
       );
@@ -53,9 +51,14 @@ const ContactPage = () => {
         <meta name="description" content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life." />
         <meta property="og:title" content="Contact Us | Ternes Construction" />
         <meta property="og:description" content="Get in touch with Ternes Construction. We'd love to hear about your project and discuss how we can help bring your vision to life." />
-        <meta property="og:image" content="/images/testimonial_hero.jpg" />
+        <meta property="og:image" content="https://www.ternesconstruction.com/images/testimonial_hero.jpg" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ternesconstruction.com/contact" />
+        <meta property="og:url" content="https://www.ternesconstruction.com/contact" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Ternes Construction" />
+        <meta name="twitter:description" content="Reach out to Ternes Construction — your trusted builder-direct team in Wichita, Kansas." />
+        <meta name="twitter:image" content="https://www.ternesconstruction.com/images/testimonial_hero.jpg" />
+        <link rel="canonical" href="https://www.ternesconstruction.com/contact" />
       </Helmet>
 
       {/* Hero Section */}
@@ -86,9 +89,7 @@ const ContactPage = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
-                </label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -100,9 +101,7 @@ const ContactPage = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
                 <input
                   type="email"
                   id="email"
@@ -115,11 +114,8 @@ const ContactPage = () => {
               </div>
             </div>
 
-            {/* ✅ New Phone Number Field */}
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                Phone Number
-              </label>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
               <input
                 type="tel"
                 id="phone"
@@ -132,9 +128,7 @@ const ContactPage = () => {
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                Subject
-              </label>
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Subject</label>
               <input
                 type="text"
                 id="subject"
@@ -147,9 +141,7 @@ const ContactPage = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                Message
-              </label>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
               <textarea
                 id="message"
                 name="message"
