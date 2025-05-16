@@ -123,15 +123,15 @@ const PortfolioPage: React.FC = () => {
       <div className="bg-neutral-50 py-16 px-4 md:px-8 text-center">
         <h2 className="text-3xl font-bold mb-6 text-neutral-800">Browse by Build Type</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <Link to="/projects/custom" className="border p-6 rounded-lg shadow hover:shadow-lg bg-white transition">
+          <Link to="/services/custom-homes" className="border p-6 rounded-lg shadow hover:shadow-lg bg-white transition">
             <h3 className="text-xl font-semibold mb-2">Custom Homes</h3>
             <p className="text-gray-600">Tailored designs, one-of-a-kind finishes, and your dream layout.</p>
           </Link>
-          <Link to="/projects/barndominiums" className="border p-6 rounded-lg shadow hover:shadow-lg bg-white transition">
+          <Link to="/services/barndominiums" className="border p-6 rounded-lg shadow hover:shadow-lg bg-white transition">
             <h3 className="text-xl font-semibold mb-2">Barndominiums</h3>
             <p className="text-gray-600">Shop-house builds blending utility, style, and open-concept living.</p>
           </Link>
-          <Link to="/projects/rural" className="border p-6 rounded-lg shadow hover:shadow-lg bg-white transition">
+          <Link to="/services/rural-builds" className="border p-6 rounded-lg shadow hover:shadow-lg bg-white transition">
             <h3 className="text-xl font-semibold mb-2">Rural Builds</h3>
             <p className="text-gray-600">Built for acreage, space, and the Kansas lifestyle.</p>
           </Link>
