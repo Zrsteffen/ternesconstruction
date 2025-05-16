@@ -1,48 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://www.ternesconstruction.com/</loc>
-    <lastmod>2025-05-14</lastmod>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/portfolio_hero.jpg</image:loc>
+      <image:caption>Homepage for Ternes Construction</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://www.ternesconstruction.com/about</loc>
-    <lastmod>2025-05-14</lastmod>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.90</priority>
   </url>
+
   <url>
     <loc>https://www.ternesconstruction.com/portfolio</loc>
-    <lastmod>2025-05-14</lastmod>
-    <priority>0.85</priority>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/portfolio_hero.jpg</image:loc>
+      <image:caption>View completed custom homes and barndominiums</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://www.ternesconstruction.com/services</loc>
-    <lastmod>2025-05-14</lastmod>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <url>
+    <loc>https://www.ternesconstruction.com/services/custom-homes</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_island.jpg</image:loc>
+      <image:caption>Custom homes tailored to your vision</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.ternesconstruction.com/services/barndominiums</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_hero.jpg</image:loc>
+      <image:caption>Modern shop-house designs</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.ternesconstruction.com/services/rural-builds</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/hero-house.jpg</image:loc>
+      <image:caption>Built for the Kansas lifestyle</image:caption>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://www.ternesconstruction.com/contact</loc>
-    <lastmod>2025-05-14</lastmod>
-    <priority>0.80</priority>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.90</priority>
   </url>
-  <url>
-    <loc>https://www.ternesconstruction.com/projects/custom</loc>
-    <lastmod>2025-05-14</lastmod>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.ternesconstruction.com/projects/barndominiums</loc>
-    <lastmod>2025-05-14</lastmod>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.ternesconstruction.com/projects/rural</loc>
-    <lastmod>2025-05-14</lastmod>
-    <priority>0.75</priority>
-  </url>
+
   <url>
     <loc>https://www.ternesconstruction.com/testimonials</loc>
-    <lastmod>2025-05-14</lastmod>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
+
 </urlset>
