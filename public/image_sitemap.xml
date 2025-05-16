@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Custom Homes -->
+  <url>
+    <loc>https://www.ternesconstruction.com/services/custom-homes</loc>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_island.jpg</image:loc>
+      <image:caption>Custom Kitchen Island with Butcher Block Countertop</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_lighting.jpg</image:loc>
+      <image:caption>Modern Pendant Lighting in Custom Home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_kitchen.jpg</image:loc>
+      <image:caption>Open Kitchen Layout with Granite Surfaces</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_countertop.jpg</image:loc>
+      <image:caption>Polished Countertop Design for Luxury Home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_kitchen.jpg</image:loc>
+      <image:caption>Full View of Custom Designed Kitchen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_kitchen(1).jpg</image:loc>
+      <image:caption>Custom Cabinetry and Sink Area</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_bar2.jpg</image:loc>
+      <image:caption>Custom Home Bar Area with Wood Accents</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_bar3.jpg</image:loc>
+      <image:caption>Entertaining Bar Space with Integrated Storage</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_dining_room.jpg</image:loc>
+      <image:caption>Bright Dining Room with Wood Finish</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_art.jpg</image:loc>
+      <image:caption>Art Wall Display in Custom Living Room</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_landscaping.jpg</image:loc>
+      <image:caption>Landscaped Exterior of Custom Home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_livingroom.jpg</image:loc>
+      <image:caption>Spacious Living Room with Large Windows</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_master_bath.jpg</image:loc>
+      <image:caption>Luxury Master Bathroom with Dual Vanity</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/custom_stairs.jpg</image:loc>
+      <image:caption>Wooden Staircase with Iron Railing</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Barndominiums -->
+  <url>
+    <loc>https://www.ternesconstruction.com/services/barndominiums</loc>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_hero.jpg</image:loc>
+      <image:caption>Exterior View of Metal Sided Barndominium</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_front.jpg</image:loc>
+      <image:caption>Front Entrance of Rural Barndominium</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_frame.jpg</image:loc>
+      <image:caption>Framing Stage of Barndominium Build</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_exterior.jpg</image:loc>
+      <image:caption>Finished Exterior of Modern Barndominium</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/yoder_finished%20kitchen.jpg</image:loc>
+      <image:caption>Modern Farmhouse Kitchen with Island</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_upstair.jpg</image:loc>
+      <image:caption>Upstairs Loft View in Barndominium</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_living.jpg</image:loc>
+      <image:caption>Living Space with Rustic Finishes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_interrior.jpg</image:loc>
+      <image:caption>Interior Beams and Open Concept Layout</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/barn_inside.jpg</image:loc>
+      <image:caption>Completed Interior of Shop-House</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Rural Builds -->
+  <url>
+    <loc>https://www.ternesconstruction.com/services/rural-builds</loc>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/hero-house.jpg</image:loc>
+      <image:caption>Front Exterior of Rural Home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/dirtwork.jpg</image:loc>
+      <image:caption>Excavation and Dirtwork Phase</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/build_process_hero.jpg</image:loc>
+      <image:caption>In-Progress Framing and Wrap</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_office.jpg</image:loc>
+      <image:caption>Custom Home Office with Built-ins</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/ternes_shower.jpg</image:loc>
+      <image:caption>Tiled Walk-In Shower</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/rural_home_box_in.jpg</image:loc>
+      <image:caption>Box-In Phase of Construction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/framing_rural.jpg</image:loc>
+      <image:caption>Framing Lumber for Rural Build</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ternesconstruction.com/images/rural_home_driveway.jpg</image:loc>
+      <image:caption>Concrete Driveway and Grading</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
