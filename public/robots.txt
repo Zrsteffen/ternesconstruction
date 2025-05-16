@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /draft/
+Disallow: /private/
+
+Allow: /
+
+Sitemap: https://www.ternesconstruction.com/sitemap.xml
